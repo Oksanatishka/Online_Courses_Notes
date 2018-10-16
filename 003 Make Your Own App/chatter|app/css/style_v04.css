@@ -1,0 +1,124 @@
+/* ================================  Global ======================================  */
+
+/* Change all fonts to Arial and use sans-serif as a fallback option. */
+* {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+/* Change button text to uppercase. */
+button {
+    text-transform: uppercase;
+}
+
+/* Background | The app's very light grey background | App */
+.bg-color {
+    background-color: #f5f5f5;
+}
+
+/* ================================  App bar ======================================  */
+
+/* Primary text | Dark text on light backgrounds | Chat messages, channel names, ... */
+.primary-text {
+    color: #212121;
+}
+/* Primary color | Main contrast color | App bar, ... */
+.primary-bg {
+    background-color: #536dfe;
+}
+/* Primary color text | Black or white | High contrast on primary color */
+.primary-color-text {
+    color: white;
+}
+/* Accent color | Color for interactive elements | Floating action button, +5 min. button */
+/* .accent-bg {
+    background-color: #afb42b;
+} */
+/* Accent color text | Black or white | High contrast on accent color */
+/* .accent-text {
+    color: white;
+} */
+
+/* ================================ Channels list ================================== */
+
+#channel-area ul {
+    background-color: white;
+}
+
+#channel-area ul li {
+    list-style-type: none;
+    padding: 16px;
+    border-bottom: solid 1px grey;
+}
+
+#channel-area ul li.active {
+    border-left: solid 3px violet;
+    color: violet;
+}
+/* ================================  Tab bar ====================================== */
+
+#tab-bar {
+    background-color: white;
+    display: flex;
+}
+
+#tab-bar button {
+    text-align: center;
+    background-color: white;
+    color: black;
+    border: 0;
+    font-size: 13px;
+    flex: 1;
+    height: 72px;
+}
+
+#tab-bar button.active {
+    border-bottom: solid 4px orange;
+}
+
+#tab-bar .icon-wrap {
+    margin-bottom: 4px;
+}
+/* ================================  Messages ====================================== */
+
+.message {
+    width: 80%;
+    margin-bottom: 8px;
+}
+
+.message button {
+    background-color: #cddc39;
+    color: black;
+}
+
+.message .metadata {
+    font-size: medium;
+}
+
+.message .message-text {
+    background-color: white;
+    padding: 16px;
+}
+
+/* Make the remaining message time larger and non-italic */
+.message .time-left {
+    font-size: large;
+    font-style: normal;
+}
+
+.message.my-msg {
+    margin-left: 17.5%;
+}
+
+.message.other-user-msg {
+    margin-left: 2.5%;
+}
+
+.w3w-embed {
+    display: inline-block;
+}
+
+/* To transform links to w3w locations in messages to uppercase.  */
+.w3w-embed .addr {
+    text-transform: uppercase;
+}

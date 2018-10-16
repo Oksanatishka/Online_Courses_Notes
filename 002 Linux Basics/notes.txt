@@ -1,0 +1,130 @@
+Resource: https://courses.edx.org/courses/course-v1:Dartmouth_IMTx+DART.IMT.C.06+2T2018/course/
+
+History of Linux and the command line  
+
+Linux is a Unix-like operating system that is open source.
+Unix, the most advanced operating system of its time that introduced many concepts still used in all modern OS.
+1993 was the year of some very popular Linux distributions,for example Debian.
+
+A command line interface, sometimes abbreviated CLI, is a human machine interface in which communication
+between the user and the computer take place in text mode.
+
+The elementary commands are of the form--
+command options files_or_data
+(the options and the files or data are optional.)
+--------------------------------------------------------------
+First commands: 
+echo 'hello world'
+echo $0 (this will not display $0. It will display the name of the interpreter of all the commands.)
+date
+cal
+history
+whoami (OR logname)
+hostname (Gets or set hostname or DNS domain name. [name of the computer])
+uptime (will display how many minutes until the system was booted & load average of the CPU.)
+clear
+uname (It will print the system information.)
+uname -a (It will print all the system information.)
+
+command not found
+man
+command options
+
+SH stands for SHELL. It's what is interpreting the command on Linux.
+So it's an application. It's software that will get all the lines.
+When you type Enter, it will interpret them and do some stuff or ask the system to do something.
+--------------------------------------------------------------
+Interactive commands: 
+top     (display and update sorted information about processes)
+nano
+vim
+how to get back to the prompt
+--------------------------------------------------------------
+Play with commands: (works only on weblinux)
+hello
+worm
+firework
+rain
+hanoi
+--------------------------------------------------------------
+Filesystem, history, FSSTND, 
+/bin    [binary] conatins all the basic commands needed to start and use a minimal system.
+/sbin   conatins commnads executable so binaries - for the super user(root user)
+/home   contains all of user directories
+/root   home directory of root user
+/etc    [editable text configuration] contains configuration files
+/lib    software libraries required for executables in /bin and /sbin
+/tmp    temporary files (sometimes it's located in /var/tmp or /run/tmp. It's emptied every time you restart PC)
+/var    various files used by the OS, usch as db, email boxes and history.
+A lot of what happened on the system is in /var/logs
+/usr    unix system resources (e.g. /usr/bin or /usr/lib)
+/dev    [device] e.g. /dev/printer, /dev/audio, /dev/mem for memory, /dev/networkcard
+
+--------------------------------------------------------------
+pwd     [print working directory] when you log in the system you are in /home/user directory
+cd
+ls
+absolute path (always starts with slash)
+relative path
+
+file    (to see info about file)
+which   (to see the absolute path of a command)
+--------------------------------------------------------------
+Touch, rm, names with spaces
+
+touch my\ file  (will create a file with a space inside of title)
+touch 'my file' (another way to create a file with a space inside of title)
+--------------------------------------------------------------
+cat less
+
+echo "hello world" > file.txt   (the output redirected to a file)
+cat file.txt > file2.txt    (kind of copy)
+cat > file.txt  (to write smth into file without entering it)
+cat /etc/services | more     (to see content by page)
+cat /etc/services | less    (to see content by scrolling page)
+/   to search within the file (when you see ':' at the bottom of terminal)
+--------------------------------------------------------------
+mkdir, rm -r
+
+rm      remove file
+rm -r   remove folder (recursively)
+mkdir -p D1/D2/D3   to create folder inside another folder
+--------------------------------------------------------------
+Unblock yourself in the command line
+
+open a 2nd terminal --> top -> kill the process by PID
+--------------------------------------------------------------
+mv: rename and move
+cp, cp -r
+
+find . -name "program.c"
+find / -name "hello" 2 > /dev/null  (find in whole system & redirect all error messages to a black hole)
+locate filename
+updatedb
+echo p*     (to find all files starting with 'p')
+echo p??    (to find files starting with 'p' but with three characters)
+
+--------------------------------------------------------------
+--------------------------------------------------------------
+Difference between interpreter and compiler
+
+In C language we use a compiler.
+--------------------------------------------------------------
+Memory representation, RAM, cells, word, byte, bit, memory address
+
+2 types of memory: 
+- RAM     Random Access Memory (temporary memory) - used during execution
+- Non-volatile memory (storage)
+
+Manage the memory with the command line: free, top, htop
+
+free
+-b  byte
+-k  kilobyte
+-m  megabyte
+-g  gigabyte
+
+Memory consumption of a program using htop, virtual memory
+--------------------------------------------------------------
+Interactive programs in C using scanf, fflush
+Don’t use scanf, use fgets getline or readline

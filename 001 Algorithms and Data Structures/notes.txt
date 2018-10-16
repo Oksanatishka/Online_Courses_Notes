@@ -1,0 +1,83 @@
+Resources: 
+- https://www.edx.org/course/algorithms-and-data-structures-1
+
+1. Selection Sort Algorithm
+2. Linear Search Algorithm (oppposite: Random Search)
+3. Bubble Search Algorithm
+4. Merge Sort Algorithm
+5. Binary Search Algorithm (requires  *sorted* array)
+-------------------------------------------------------------------------------------
+Big O
+Two steps, or Big O(2)
+
+To have tools to analyze the efficiency of an algorithm, computer scientists use what's called 
+Big O time and space notation.
+
+For running time, We are counting how many "steps" an algorithm would take in relation to the size 
+of its input; for space, we are counting how much memory space the algorithm needs in relation 
+to the size of its input. 
+
+It's a way to compare a solution of one programmer to another and choose the best for the task.
+
+▪ A logarithmic algorithm – O(logn)
+Runtime grows logarithmically in proportion to n.
+▪ A linear algorithm – O(n)
+Runtime grows directly in proportion to n.
+▪ A superlinear algorithm – O(nlogn)
+Runtime grows in proportion to n.
+▪ A polynomial algorithm – O(nc)
+Runtime grows quicker than previous all based on n.
+▪ A exponential algorithm – O(cn)
+Runtime grows even faster than polynomial algorithm based on n.
+▪ A factorial algorithm – O(n!)
+Runtime grows the fastest and becomes quickly unusable for even
+small values of n.
+
+Algorithmic Examples of Runtime Analysis:
+Some of the examples of all those types of algorithms (in worst-case scenarios) are mentioned below:
+
+▪ Logarithmic algorithm – O(logn) – Binary Search.
+▪ Linear algorithm – O(n) – Linear Search.
+▪ Superlinear algorithm – O(nlogn) – Heap Sort, Merge Sort.
+▪ Polynomial algorithm – O(n^c) – Strassen’s Matrix Multiplication, Bubble Sort, Selection Sort, 
+Insertion Sort, Bucket Sort.
+▪ Exponential algorithm – O(c^n) – Tower of Hanoi.
+▪ Factorial algorithm – O(n!) – Determinant Expansion by Minors, Brute force Search algorithm 
+for Traveling Salesman Problem.
+
+-------------------------------------------------------------------------------------
+Data structures(DS):
+
+1) Arrays
+
+The advantages of arrays: 
+-Simple to implement 
+-Immediate Random Access
+
+The disadvantages of arrays: 
+-We have to define the size of the array ahead of time. 
+-We can't directly add, delete or resize the array without creating a new array 
+and copy the elements to it, which if the array has N elements, it will be Big O(N) to copy.
+
+2) Linked Lists (dynamic DS)
+
+Linked list is a series of elements linked together by pointers, and we can dynamically allocate 
+more space to the linked list if we wish.
+
+3) Stack (simple DS)
+
+A stack is a special kind of LinkedList.
+Stack is therefore called a LIFO(Last-in First-out) data structure. 
+There are three essential stack operations:push, pop, peek.
+- Pushing pushes a new element to the top of the stack; 
+- popping removes and returns the top element from the stack; and finally, 
+- peeking returns the top elment without removing it from the stack. 
+
+4) Queue
+
+Queue is again a special type of LinkedList. It is a FIFO(FIrst-in, First-out) data structure. 
+Queue supports three main operations: enqueue, dequeue, and peek.
+- Enqueue adds an element to the end of the queue; 
+- dequeue removes the first element in the queue; 
+- peek returns the first element without removing it, just like in a stack.
+

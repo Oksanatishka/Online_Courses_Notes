@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <title>chatter|app</title>
+    <style>
+        /* Change all fonts to Arial and use sans-serif as a fallback option. */
+        * {
+            font-family: Arial, sans-serif;
+        }
+        /* Change button text to uppercase. */
+        button {
+            text-transform: uppercase;
+        }
+        /* Background | The app's very light grey background | App */
+        .bg-color {
+            background-color: #F5F5F5;
+        }
+        /* Primary text | Dark text on light backgrounds | Chat messages, channel names, ... */
+        .primary-text {
+            color: #212121;
+        }
+        /* Primary color | Main contrast color | App bar, ... */
+        .primary-bg {
+            background-color: #536DFE; 
+        }
+        /* Primary color text | Black or white | High contrast on primary color */
+        .primary-color-text {
+            color: white;
+        }
+        /* Accent color | Color for interactive elements | Floating action button, +5 min. button */
+        .accent-bg {
+            background-color: #AFB42B;
+        }
+        /* Accent color text | Black or white | High contrast on accent color */
+        .accent-text {
+            color: white;
+        }
+        .w3w-embed {
+            display: inline-block;
+        }
+        /* To transform links to w3w locations in messages to uppercase.  */
+        .w3w-embed .addr {
+            text-transform: uppercase;
+        }
+        /* Make the remaining message time larger and non-italic */
+        .time-left {
+            font-size: 120%;
+        }
+    </style>
+</head>
+
+<body class="bg-color">
+    <div id="channel-area">
+        <h1 class="primary-bg primary-color-text">chatter|app</h1>
+        <h3 class="primary-text">#Yummy</h3>
+        <h3 class="primary-text">#SevenContinents</h3>
+        <h3 class="primary-text">#KillerApp</h3>
+        <h3 class="primary-text">#FirstPersonOnMars</h3>
+        <h3 class="primary-text">#Octoberfest</h3>
+        <button type="button" class="accent-bg accent-text">new</button>
+        <button type="button" class="accent-bg accent-text">trending</button>
+        <button type="button" class="accent-bg accent-text">favorites</button>
+    </div>
+    <div id="chat-area">
+        <h1 class="primary-bg primary-color-text">
+            <!-- #SevenContinent <span>by cheeses.yard.applies</span> -->
+            #SevenContinent by <a href="https://map.what3words.com/daring.lion.race" target="_blank">
+                <div class="w3w-embed w3w-small">
+                    <!-- <style type="text/css">
+                        @import url("https://assets.what3words.com/css/w3w-glyphicon.css");
+                    </style> -->
+                    <div class="w3w-address"><span class="addr accent-text">daring.lion.race</span></div>
+                </div>
+            </a>
+        </h1>
+        <h5>by <a href="https://map.what3words.com/daring.lion.race" target="_blank">
+                <div class="w3w-embed w3w-small">
+                    <!-- <style type="text/css">
+                    @import url("https://assets.what3words.com/css/w3w-glyphicon.css");
+                </style> -->
+                    <div class="w3w-address"><span class="addr">daring.lion.race</span></div>
+                </div>
+            </a> Wed, June 20th, 13:37 <span class="time-left">15 min. left</span></h5>
+        <p>What's the place you folks call home?</p>
+        <button type="button" class="accent-bg accent-text">+5min.</button>
+    </div>
+</body>
+
+</html>

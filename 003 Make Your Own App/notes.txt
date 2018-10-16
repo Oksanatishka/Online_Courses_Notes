@@ -1,0 +1,221 @@
+Resource: https://courses.edx.org/courses/course-v1:TUMx+MYOAx+3T2018/course/
+
+https://material.io/design/color/#
+https://www.materialpalette.com/
+
+CSS
+1) Absolute units are centimeters (cm), inches (in) and points (pt).
+2) Relative units like em and percent (%) should be preferred. 
+3) px
+
+JS
+
+Modify the content of elements: 
+document.getElementById(id) 
+document.getElementById(id).innerHTML = 'Some content';
+ocument.getElementById(id).src = 'img/rain.png';
+
+Change the Element Style:
+document.getElementById(id).style.[any CSS property]
+document.getElementById(id).style.display = 'none';
+document.querySelector('.my-class').style.backgroundColor = 'red';
+document.querySelector('#my-id').style.backgroundColor = 'red';
+
+jQuery
+
+JavaScript framework, allows you to replace document.querySelector method with a simple $ sign:
+$('#my-id')
+$('.my-class')
+
+Moreover, jQuery provides shortcuts for frequent operations. For example, changing the display 
+property to show and hide elements can be done with two simple statements:
+$('#menu').show()
+$('#menu').hide()
+
+All methods are well-described in jQuery’s API documentation:
+https://api.jquery.com/
+
+Two other important methods are:
+$('#menu').html('content')              // equivalent to innerHTML
+$('#menu').css('property', 'value')     // equivalent to style
+
+The following syntax is used to include jQuery from a CDN (either in the head or at the bottom of the body):
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+OR
+download here https://jquery.com/download/ and
+Save it in a new folder called js in your project folder. Reference the file in your html document as follows:
+<script src="js/jquery-3.3.1.min.js"></script>
+
+Keep in mind that the order in which JS scripts are referenced in your HTML document is important. 
+If main.js script relies on jQuery, you must reference jQuery before your own script.
+
+
+function myFirstFunction() {
+    // This is a single line comment in JavaScript
+    // Display "My first function" in the console when function is called
+    console.log('My first function');
+}
+// Invoke function
+myFirstFunction()
+
+
+function add(a,b){
+    return a+b;
+}
+
+Interaction programming slides, which are available online: 
+https://interactionprototyping.github.io/programming/slides/#/coverpage
+
+Font Awesome https://fontawesome.com/free
+
+Variables
+In JavaScript, there are three different ways to declare a variable: 
+- using the var keyword, 
+- the let keyword, or 
+- the const keyword.
+
+There are two different types of scope in JavaScript, the global scope and the local scope.
+JavaScript has a function scope, which means that each function creates their own, new scope. 
+
+
+Data Types
+Keep in mind that JavaScript is a dynamic type language. That means you don’t have to specify 
+the type of a variable because it is dynamically used by JavaScript.
+
+1) Strings are defined with quotes. https://www.quirksmode.org/js/strings.html
+2) Numbers are defined without quotes. http://speakingjs.com/es5/ch11.html 
+Math https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Math
+3) Boolean is a logical operator which is either True or False. 
+In JavaScript, everything without a “value” is false
+4) Arrays provide a possibility to store multiple forms of data within one variable.
+e.g.var arrayName = ["element1", "element2", "element3"];
+
+Objects, properties, methods: 
+https://www.w3schools.com/js/js_objects.asp
+e.g. var car = {type:"Fiat", model:"500", color:"white"};
+
+Date
+https://www.w3schools.com/js/js_dates.asp
+You may notice that the number 86400000 is used quite often.
+JavaScript dates are stored internally as time values milliseconds to be precise 
+since 1970-01-01 00:00:00 Universal Time (UTC). 
+One day contains 24*60*60*1,000 = 86,400,000 milliseconds.
+
+Standard methods
+All JS objects’ capabilities
+https://www.w3schools.com/jsref/default.asp
+The syntax of a method may differ depending on whether standard JS or jQuery is used.
+
+Inheritance http://vanseodesign.com/css/css-specificity-inheritance-cascaade/
+
+Form
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
+
+Accessing user input with jQuery
+Let’s assume we want to get the user’s text input. Our code may look like this:
+document.getElementById('txt_name').value;
+or – using jQuery – just like this:
+$('#txt_name').val();
+
+this
+http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/
+https://www.youtube.com/watch?v=fjJoX9F_F5g
+
+Constructor Function
+http://www.samselikoff.com/blog/some-Javascript-constructor-patterns/
+You may have noticed that the above function’s name is capitalized, though usually functions are not capitalized. 
+It is considered good practice to name constructor functions with an upper-case first letter.
+
+jQuery element creation
+https://learn.jquery.com/using-jquery-core/manipulating-elements/
+e.g. $("<span>").html("I am new").appendTo("#parent"); //Appends a new span to the element with id "parent".
+
+
+Debugging JavaScript in Google Chrome and Visual Studio Code
+https://www.youtube.com/watch?v=AX7uybwukkk
+
+Try to answer yourself the following questions:
+How do I use breakpoints and the debugger statement to pause a script?
+What features exist to step through the paused code?
+What information about variables are available?
+
+Material Design
+https://material.io/design/
+
+CSS calc() Function https://www.w3schools.com/cssref/func_calc.asp
+
+Pseudo-elements & Pseudo-classes https://css-tricks.com/pseudo-element-roundup/
+
+CSS cursor Property https://www.w3schools.com/cssref/pr_class_cursor.asp
+
+Some array methods
+.length: determines the number of elements in an array.
+.push(): adds an element to the end of an array.
+.pop(): removes the last element and returns it.
+.shift(): removes the first element, returns it and “shifts” all other elements to a lower index.
+
+Events, listeners, and callbacks
+1) Events
+List of events in JavaScript, e.g. onclick(): https://www.w3schools.com/tags/ref_eventattributes.asp
+jQuery Event Methods: https://www.w3schools.com/jquery/jquery_events.asp 
+
+2) Listener (callbacks)
+https://www.w3schools.com/js/js_htmldom_eventlistener.asp
+The addEventListener() method attaches an event handler to the specified element.
+Syntax: element.addEventListener(event, function, useCapture);
+where 
+1st parameter is the type of the event (like "click" or "mousedown").
+2nd - the function we want to call when the event occurs.
+3rd - [optional] is a boolean value specifying whether to use event bubbling or event capturing.
+
+$('button').click(function () {
+  console.log('Button clicked');
+});
+
+jQuery event functions:
+$.on(event, listener): Register an event listener for arbitrary events
+$.click(listener): Register an event listener for clicks
+$.ready(listener): Register an event listener that will be called after the document has fully loaded
+
+More callbacks
+$.each(): Iterate over jQuery elements and execute a function for every element.
+map(): Iterate over an array and change the values using a callback getting the old and returning the new value.
+forEach(): Iterate over a JavaScript array and execute a function for every element of the array.
+
+
+Timeout & interval
+https://www.w3schools.com/js/js_timing.asp
+Timing events: 
+.setTimeout();
+.setInterval();
+
+Exchanging data
+https://www.w3schools.com/js/js_json_intro.asp
+https://stackoverflow.com/questions/383692/what-is-json-and-why-would-i-use-it
+For interactive web applications, it is sometimes neccessary to exchange data with other platforms 
+or web services. In JavaScript, a common way to exchange data is using the JSON format.
+
+Ajax requests
+To initialize an exchange of data (e.g. JSON objects) with an external URL, 
+you have to make an AJAX request via $.ajax().
+For frequently used AJAX requests, there are shorthand functions implying a specific set of parameters for the request.
+$.post(): Loading data from a server using a HTTP POST request.
+$.getJSON(): Load data in JSON format from a server. 
+
+API
+Google Maps API (map)   https://cloud.google.com/maps-platform/
+Dark Sky API (wheather) https://darksky.net/dev
+Twitter REST API        https://developer.twitter.com/en/docs
+
+As a way of authentication, you usually need some kind of developer key to get access to APIs. 
+Most of them are not entirely cost-free, but offer a limited number of free requests 
+per time interval (Google Maps API: 2500 free requests per day).
+
+https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en
+
+
+Google Fonts
+https://developers.google.com/fonts/docs/getting_started
+https://fonts.google.com/specimen/Roboto?selection.family=Roboto
+
+

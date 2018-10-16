@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="main.js"></script>
+</head>
+
+<body onload="printWaitingRoom();">
+    <h2>Waiting Room </h2>
+
+    <p>
+        <!-- Input field to type in the name of a new patient.-->
+        <input type="text" id="myPatient" placeholder="Type a name">
+        <!--Add Patient button adds a patient with the name from the input field.-->
+        <button onclick="addPatient();">Add patient!</button>
+        <!--The next patient can be called out of the waiting room.-->
+        <button onclick="nextPatient();">Call the next patient!</button>
+    </p>
+    <br>
+    <!-- The number of patients in the waiting room is displayed. -->
+    <!-- The names of all the patients in the waiting room is listed-->
+    <p><span id="numberOfPatients"></span><span id="waitingRoom">Patients in the waiting room:</span></p>
+    <!-- The name of the current patient is displayed here. -->
+    <p id="currentPatient">The current patient is:</p>
+</body>
+
+</html>
