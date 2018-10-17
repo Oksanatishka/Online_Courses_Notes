@@ -1,5 +1,7 @@
 Resources: 
 - https://www.edx.org/course/algorithms-and-data-structures-1
+- https://www.geeksforgeeks.org/data-structures/
+- https://hackernoon.com/50-data-structure-and-algorithms-interview-questions-for-programmers-b4b1ac61f5b0
 
 1. Selection Sort Algorithm
 2. Linear Search Algorithm (oppposite: Random Search)
