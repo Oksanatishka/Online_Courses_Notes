@@ -1,0 +1,24 @@
+Resource: https://courses.edx.org/courses/course-v1:UCSanDiegoX+CSE167x+2T2018/course/
+
+3D Graphics Pipeline consists of 3 stages:
+Modeling --> Animation --> Rendering
+
+Modeling is the process of creating geometric models of objects
+we're interested in. This could be a simple model of an object like a teapot. 
+
+The next step if you want the objects to actually move is to consider the animation or the motion
+of characters.
+
+Rendering or creating realistic images, given the geometry and the animation.
+
+HW 1: Transformations. Place objects in world, view them. Simple viewer for a teapot.
+HW 2: Scene Viewer. View scene, Lighting and Shading (with GLSL programmable shaders).
+HW 3: Ray Tracer. Realistic images with ray tracing (2 basic approaches: rasterize & raytrace images).
+
+-----------------------------------------------------
+Basic Math: Vectors and Dot Products
+
+Vectors are used to store offsets (смещений), displacements(перемещений) and locations(местоположений). 
+
+OpenGL and GLUT
+GLM library is available at http://glm.g-truc.net. 

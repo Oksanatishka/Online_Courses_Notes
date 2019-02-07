@@ -1,0 +1,17 @@
+Resources:
+- [book] Bitcoin and Cryptocurrency Technologies https://d28rh4a8wq0iu5.cloudfront.net/bitcointech/readings/princeton_bitcoin_book.pdf
+- [book] Mastering Bitcoin https://github.com/bitcoinbook/bitcoinbook/blob/develop/book.asciidoc
+- [website] Blockchain For Developers  https://learnblockcha.in/
+
+==================== Distributed Systems & Consensus ==================== 
+Bitcoin transactions are recorded on the blockchain, a ledger that is maintained by a distributed system, or a network of independent nodes connected by message channels that move information between them.
+
+==================== Cryptoeconomics & Proof-of-Stake ==================== 
+Encryption is the process of transforming information into an unintelligible intermediary piece of information which can be transformed back into its original state with decryption.
+==================== Enterprise Blockchain ==================== 
+
+==================== Scalability ==================== 
+
+==================== Anonymity ==================== 
+
+==================== A Blockchain Powered Future ==================== 

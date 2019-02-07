@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <p>Open js console</p>
+    <script>
+        var person = {
+            name: "Oksana Bibik",
+            age: 25,
+            isFemale: true,
+            personality: ['patient', 'loyal', 'happy'],
+            company: { name: 'edx', id: 1234 }
+        }
+        console.log(person.age)
+        console.log(person['company'].id)
+
+        var pet = {
+            name: 'Cooper',
+            type: 'dog'
+        }
+        console.log(pet.age)    //undefined
+        pet.age = 11;
+        console.log(pet.age)    //11
+        pet['status'] = 'good boy';
+        console.log(pet.status)
+    </script>
+</body>
+
+</html>

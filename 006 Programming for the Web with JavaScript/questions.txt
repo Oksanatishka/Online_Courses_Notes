@@ -1,0 +1,99 @@
+Topic: HTML, CSS, JavaScript
+
+1. What does Ajax stand for, and what does it do?
+
+Asynchronous JavaScript And XML
+When Ajax is used, an HTTP request can be sent by Javascript and the server can respond by inserting a small piece 
+of data into the necessary page. This allows for faster response times, and a better user experience.
+
+2. What is the difference between block-level elements and inline elements?
+
+Block-level elements - Render to begin on a new line and can contain other in-line and block-level elements
+Inline elements - Render on the same line and can only contain in-line elements
+
+3. What is an HTML tag?
+
+HTML tags surround content to label them (i.e <p> can be used to denote a paragraph).
+
+4. [...] specifies which version of HTML a browser should use to render the document.
+
+<!DOCTYPE html>
+
+5. What is the difference between a class selector and an id selector?
+
+For class selectors, a class value is set to modify a set of HTML code (i.e class=. 
+For id selectors, an id value is set to modify HTML code (i.e id=).
+
+6. A CSS declaration is made up of a [...] and a [...].
+
+A CSS declaration is made up of a property and a value.
+Both are predefined, every property has a set amount of values.
+
+7. What is a pseudo-class selector?
+
+It is a keyword added to the end of a selector, used to specify that you want to style a selected element 
+but only when it's in a certain state (i.e using :hover to specify the style of the hover state).
+
+8. How can Javascript react to events?
+
+Javascript can be executed when an event occurs. An example of this is reacting to when the user clicks the mouse, 
+or when the mouse moves over an element.
+
+9. The [...] tag contains content visible to the user.
+
+The <body> tag contains content visible to the user.
+
+10. What are HTML lists?
+
+Structures that allow you to group related content, such as a shopping list, 
+and come in ordered <ol> and unordered <ul> versions.
+
+11. HTML [...] provide additional information for an HTML element/tag.
+
+HTML attributes provide additional information for an HTML element/tag.
+For example, the id attribute requires a unique value within the scope of the entire document.
+
+12. A [...] specifies what type of tag/element you want affected by a rule.
+
+A selector specifies what type of tag/element you want affected by a rule.
+
+13. Why would an error be shown for this line of code?
+<p>I love learning! With <span>all</p> my heart.</span>
+
+Nested tags have to be closed before the outer tag is closed.
+In this situation, the outer paragraph tag was closed before the inner span tag was closed (i.e. </p> was typed in before </span>).
+
+14. What does a responsive website do?
+
+It adapts its layout to the viewing environment by using fluid, proportion-based grids, flexible images, and CSS3 media queries.
+
+15. What is a character entity reference?
+
+Character entities are used to display reserved characters in HTML.
+
+16. The <div> tag is a [...] element while the <span> tag is a [...] element.
+
+The <div> tag is a block-level element while the <span> tag is a inline element.
+
+17. The [...] refers to a set of rules that define what content elements are allowed to wrap.
+
+The content model refers to a set of rules that define what content elements are allowed to wrap.
+
+18. Where do you include Javascript in HTML code?
+
+There are multiple places to include Javascript code. One place is to include it in the <head> section as an external link. You could also include it inline within a <script> tag.
+
+19. What is the box model?
+
+The box model is essentially a box that can wrap around CSS elements. 
+It consists of margins, borders, padding, and actual content.
+
+20. If CSS changes the style of the web page, Javascript changes the [...] of a web page.
+
+If CSS changes the style of the web page, Javascript changes the behavior of a web page.
+
+21. A [...] is a tool that controls how the content of specified elements should be displayed.
+
+A CSS rule is a tool that controls how the content of specified elements should be displayed.
+
+22. 

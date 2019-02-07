@@ -1,0 +1,176 @@
+==================== “What is Bitcoin?” ==================== 
+* 1) Bitcoin is considered the first and the most widely used cryptocurrency.
+* 2) Bitcoin lowercase refers to the actual units of currency.
+* 3) Bitcoin is the inspiration for the blockchain, which is the underlying data structure of this cryptocurrency.
+* A cryptocurrency is a completely digital, decentralized currency that is built using
+principles of computer science, cryptography, and economics.
+* A data structure is a virtual format for organizing, retrieving, and storing information.
+
+A Bitcoin user will say that they have a certain amount of bitcoins, similar to how we say
+we have a certain amount of dollars when referring to the US Dollar.
+The Bitcoin blockchain in particular stores a permanent history of all transactions to ever occur in the history of Bitcoin.
+This cryptocurrency is not backed by any central organization, government, or company.
+Instead, Bitcoin is built by the users, for the users.
+As we said, Bitcoin was inspired by the Cypherpunk Movement of the late 80s.
+Cypherpunks advocate for the protection of privacy using cryptography.
+They don’t trust governments, corporations, or large organizations to respect privacy.
+
+The Bitcoin whitepaper, or research paper, was published in October 2008 by Satoshi Nakamoto.
+* Satoshi Nakamoto is a pseudonym, or a false identity, of an individual or a group of individuals.
+
+So how does Bitcoin do it? 
+- On a high level, the Bitcoin network validates transactions and stores the entire transaction history.
+The Bitcoin network is a group of users communicating with each other as part of the Bitcoin protocol.
+
+But what are the problems?
+- there are no central parties to ask for information about user accounts, and there are no central
+parties to kick out or censor malicious users.
+- The most popular attack is known as the double spending attack, an attack where some value is used for more than it i’s worth.
+
+So how does bitcoin solve these problems?
+- the blockchain, and the Proof-of-Work consensus protocol
+
+
+==================== Bitcoin vs. Banks ==================== 
+Banks:
+- manage accounts
+
+Bitcoin:
+- identity and account management are completely autonomous
+
+Stage 1. Identity in daily life:
+- Houses have addresses and mailbox keys
+- Emails have aliases and pw
+- Bitcoin has public keys and private keys
+
+Stage 2. Transactions
+* Unspent Transaction Output (UTXO) - is bitcoin's model for transactions
+
+Validity:
+- Proof of ownership
+- Available funds
+- No other transactions using the same funds
+
+Stage 3. Record Keeping
+Distributed database structure: blockchain
+which used for storing transactions to maintain a global record.
+
+Stage 4. Consensus
+to make sure that everyone agrees on the history of transactions.
+
+The Bitcoin network requires Proof-of-Work to add new blocks to the blockchain. 
+
+Pre-Bitcoin
+The roots of Bitcoin starts with libertarianism (to protect privacy).
+
+
+==================== Intro: Early Bitcoin ==================== 
+Bad reputation due to its focus on privacy and decentralized nature.
+- there is no central entity or court to fix any mistakes within the blockchain.
+If someone found your private key and stole your funds, no one else can give your stolen
+funds back to you.
+Early Bitcoin was thus often the target of scandals, hacks, and illegal activity.
+
+
+Bitcoin Bubble and Altcoins
+Altcoins(alt-standing for alternatives):
+- Litecoin
+- ZCash
+- Stellar
+- Ethereum
+- Dogecoin
+- DASH
+- Monero
+- Ripple
+
+Bitcoin startups:
+- coinbase
+- coinanalytics
+- blockchain
+- xapo
+- bitgo
+- chain
+- pantera
+
+ICOs - initial coin offerings
+
+
+==================== Intro: Enterprise Blockchain ==================== 
+While blockchain technology was initially developed to underlie cryptocurrencies, it
+quickly drew the attention of enterprises, which wanted to harness the same technology
+to create private or permissioned blockchains.
+Thus gave rise to enterprise blockchains.
+We’ve been talking a lot about public blockchains like Bitcoin and Ethereum.
+Now we’ll be switching gears to see how blockchain fits in with enterprises, particularly
+with banks -- ironically enough.
+As a technology that was initially created to avoid large banks and powerful centralized
+institutions, blockchain seems to have come full circle...
+
+
+Banks and Blockchain
+There are many different enterprise technologies in the space today: 
+- R3’s Corda,
+- Chain
+- JP Morga’s Quorum and Juno
+- Digital Asset Holdings
+
+The Hyperledger project is an open source blockchain run by Digital Asset Holdings and
+the Linux Foundation.
+IBM’s Open Blockchain is a platform that is now part of the Hyperledger project as
+“Fabric”.
+The way that companies, especially financial institutions, have looked at blockchain technology
+has changed drastically over the past few years.
+
+
+Blockchain Community and Politics
+There are a few different forums that people use. There’s 
+- Reddit’s r/bitcoin, online discussion boards like 
+- Bitcointalk.org, 
+- Bitcoin meetups
+- and conferences, 
+- and Bitcoin specific IRC Channels.
+There are also organizations like us (Blockchain at Berkeley), that are dedicated to discussing
+and pushing forward blockchain technology.
+
+
+==================== Cryptographic Hash Functions ====================
+Key Properties of Cryptographic Hash Functions
+- Preimage resistance
+- Second preimage resistance
+- Collision resistance
+
+Tamper-Evidence DB
+
+Bitcoin Script
+
+==================== Types of Users ==================== 
+Key componenets:
+- Wallet
+- Miner
+- Full Blockchain
+- Network Routing Node
+
+Bitcoin wallets:
+- Hot Wallet (are connected to the internet)
+    - Smartphone apps: Mycelium,AirBitz 
+    - Online web-wallets: Blockchain.info, coinbase.com
+- Cold Storage (not connected to the internet)
+    - Paper wallets: Bitcoinpaperwallet.com, bitaddress.org
+    - Hardware wallets: Ledger, Trezor, Case, KeepKey
+    - Brain Wallet
+
+Bitcoin ATMs
+Simple Payment Verification
+
+Mining
+A full-fledged Bitcoin miner must:
+0. Download the entire Bitcoin blockchain (optinal if you mine in mining pool)
+1. Verify incoming transactions
+2. Create a blockchai
+3. Find a valid nonce
+4. Broadcast your block
+5. Profit!
+
+==================== Pool Strategies ==================== 
+- Pool Hopping
+- Pool Cannibalization

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <p>Open js console</p>
+    <script>
+        var firstName = 'Oksana'
+        console.log(firstName)
+        var lastName = 'Bibik'
+        console.log(lastName)
+        var fullName = firstName.concat(' ', lastName)
+        console.log(fullName)
+        var greeting = 'Hello ' + fullName
+        console.log(greeting)
+        var toUppper = greeting.toUpperCase()
+        console.log(toUppper)
+        var toLower = greeting.toLowerCase()
+        console.log(toLower)
+        var length = greeting.length
+        console.log(length)
+
+
+        var friend = 'turtle'
+        friend.toUpperCase();       // 'TURTLE'
+        console.log(friend);        //  'turtle'
+
+        var message = ' hello world ';
+        message = message.trim();           // 'hello world'
+
+        var myAnimal = 'cat'.concat('mouse');
+
+
+        var msg = 'programming in JS is fun';
+        msg.startsWith('programming');          // true
+        msg.startsWith('PROGRAMMING');          // false
+        msg.endsWith('is fun');                    // true
+        msg.includes('JS');                         // true
+
+
+        var title = 'the title of my book';
+        var start = title.search('title');      // 4 
+        start = title.search('banana');         // -1
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <p>Open js console</p>
+    <script>
+        function factorial(n) {
+            var product = 1
+            for (var i = 1; i <= n; i++) {
+                product *= i
+            }
+            return product;
+        }
+        var x = 3
+        var f = factorial(x)
+        console.log(f)
+
+        var nums = [4, 8, 12, 2]
+        function print(n) {
+            console.log(n)
+        }
+        nums.forEach(print)
+
+        function isEven(n) {
+            return n % 2 == 0
+        }
+        nums.every(isEven)  // true
+
+        function square(n) {
+            return n * n;
+        }
+        var squares = nums.map(square);     // [16, 64, 144, 4]
+
+        var add = function (a, b) {
+            return a + b
+        };
+        console.log(add(3, 5))   // 8
+
+        var oksanaBibik = {
+            name: 'Oksana Bibik',
+            age: 25,
+            greeting: function () {
+                return 'Hello! Nice to meet you!';
+            }
+        }
+        console.log(oksanaBibik.greeting())
+
+        function Person(name, age) {             // prototype
+            this.name = name;
+            this.age = age;
+            this.greeting = function () {
+                return 'Hello! My name is ' + this.name;
+            }
+        }
+
+        var irinaBibik = new Person('Irina Bibik', 52);
+        irinaBibik.greeting();
+
+        var antonBibik = new Person('Anton Bibik', 31);
+        antonBibik.greeting();
+
+        function Student(name, age, school) {
+            this._proto_ = new Person(name, age)
+            this.school = school;
+        }
+
+        var serhiiMykhailenko = new Student('Serhii Mykhailenko', 29, 'PennX')
+
+        serhiiMykhailenko.greeting()
+        serhiiMykhailenko instanceof Person     // true
+
+        var name = 'Oksana'
+        name.length;        // 6
+        name.chatAt(3);     // 'a'
+        name[3];            // 'a'
+
+
+    </script>
+</body>
+
+</html>

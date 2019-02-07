@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- add library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li>dog</li>
+        <li>cat</li>
+        <li>elephant</li>
+        <li>bear</li>
+    </ul>
+
+    <script>
+        $('li').mouseover(function () {
+            $(this).css('color', 'red');
+            $(this).css('font-size', '120%');
+        })
+        $('li').mouseleave(function () {
+            $(this).css('color', 'black');
+            $(this).css('font-size', '100%');
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+Resources: 
+- How do I run a Unix process in the background? https://kb.iu.edu/d/afnz
+- Vocareum IDE https://www.vocareum.com/
+- ROS http://wiki.ros.org/ROS/Installation
+
+================ Week 1: ================ 
+Introduction to Robotics
+Robotics and AI
+Introduction to ROS
+Project 1 
+
+
+* Robot Operating System (ROS) runs on Ubuntu Linux.
+Projects will be carried out in the Python language.
+
+Robot
+- Manipulation
+    - [preprogrammed movement] Industrial manipulationa: manufacturing, assembly etc
+    - [arbitrary movement, controlled by human] Robotic surgery
+    - [arbitrary movement, controlled by human] EOD robots (robot car)
+    - [autonomy, the need to react to environment] General-purpose manipulation (e.g. Amazon picker)
+- Mobility
+    - Wheeled robots
+        - autonomous cars
+        - more domains each day: warehouse, hospitals, hotes, the home
+    - Legged robots (Boston Dynamics)
+    - complete scenario: disaster response
+    - aerial robots
+    - underwater robots
+
+Termostat from Nest (Google).
+
+Robot is:
+- a device that can sense, plan, and act
+- a self-powered device that effects physical change on the world
+- there is no universally accepted definition
+
+* AI - artificial intelligence - the ability to react appropriately when faced with unforeseen situations.
+
+ROS (open source)
+http://www.ros.org/about-ros
+ROS is a flexible framework for writing robot software.
+It is a collection of tools, libraries, and conventions that aim to simplify the task of creating complex and robust robot behavior across a wide variety of robotic platforms.
+- plumbing
+    - code organization and management
+    - communication between components
+        nodes: laser driver --> localization --> path planner --> motor drivers 
+        each node can be written in different language - Python, C++
+- tools
+    - intospection
+    - visualization
+    - ...
+- capabilities
+    - navigation (localization, path planning, etc.)
+    - perception (object recognition, etc.)
+    - manipulation (arm motion planning, etc.)
+    - ...
+- ecosystem
+    - users
+    - support forum
+    - conferences and events
+    - ...
+
+ROS tutorial http://wiki.ros.org/
+
+
+================ Week 2: ================ 
+2D Transforms, Homogenous Coordinates
+3D Transforms, Thinking about Transforms
+Transform Inverse, Rotation Representations
+Transforms in ROS, the TF library
+Project 2 
+
+
+
+================ Week 3:================ 
+Robot Arms Introduction, Kinematic Chains
+Forward Kinematics: URDF
+Forward Kinematics: Analytical Methods, DH Parameters
+Forward Kinematics: DH Examples
+Project 3 
+================ Week 4: ================ 
+Analytical IK, Robot Examples
+Robot Workspaces and IK Solutions
+Homework 1 
+================ Week 5: ================ 
+Differential Kinematics: Jacobian Definition and Analytical Computation
+Singularities
+Full Kinematics: Robot Examples
+Homework 2 
+================ Week 6: ================ 
+Study week 
+================ Week 7 ================ 
+Numerical Jacobian Computation
+Cartesian and Null Space Control
+Project 4 
+================ Week 8: ================ 
+Motion Planning: Configuration Space vs. Task Space
+Stochastic Motion Planning
+Project 5 
+================ Week 9: ================ 
+Mobile Robots Introduction
+Mobile Robots Kinematics: Differential Drive, Other Kinematics 
+Path planning for mobile robots
+================ Week 10: ================ 
+Course Recap
+Things We Have Not Covered
+Robotics and AI Revisited

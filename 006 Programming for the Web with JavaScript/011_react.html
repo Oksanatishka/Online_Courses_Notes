@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="react.js"></script>
+        <script src="react-dom.js"></script>
+    </head>
+
+    <body>
+        <div id="container"></div>
+        <script type="text/jsx">
+            <!-- Insert React code here -->
+            ReactDOM.render(
+                <h1>Hello, World</h1>                   // put this html ..
+                document.getElementById('container')    // .. at this location
+            );
+
+            <!-- 1. Creating React Component -->
+            var HelloComponent = React.createClass ({
+                render: function() {
+                    return (
+                        <h1>Hellow World</h1>   //jsx
+                    );
+                }
+            });
+
+            <!-- 2. OR Another way of creating a component using ES6 -->
+            class HelloComponent extends React.Component {
+                render() {
+                    return (
+                        <h1>Hellow World</h1>
+                    );
+                }
+            }
+
+            <!-- Render the component -->
+            ReactDOM.render(
+                <HelloComponent />,
+                document.getElementById('container')
+            );
+
+            <!-- 3. Component Properties -->
+            ReactDOM.render (
+                <HelloUser name="Maria" />,
+                document.getElementById('container')
+            );
+
+            class HelloUser extends React.Component {
+                render () {
+                    return (
+                        <h1>Hello {this.props.name}!</h1>
+                    );
+                }
+            }
+            <!-- 4. Component State -->
+            class TimesViewed extends React.Component {
+                constructor(props) {
+                    super(props);
+                    var timesViewed = 0;
+                    if (localStorage.timesViewed) {
+                        timesViewed = localStorage.timesViewed;
+                    }
+                    timesViewed++;
+                    this.state = { numViews: timesViewed };
+                    localStorage.timesViewed = timesViewed;
+                }
+
+                render () {
+                    return <b>{this.state.numViews}</b>;
+                }
+            }
+
+            ReactDOM.render (
+                <TimesViewed />,
+                document.getElementById('container')
+            );
+
+
+
+            <!-- 5. React Events -->
+            <!-- Example 1 -->
+            class Counter extends React.Component {
+                constructor(props) {
+                    super(props);
+                    this.state = {count: 0};    // never use anywhere else except for the constructor
+                }
+                incrementCount(){   // callback f-n
+                    this.setState({count: this.state.count + 1;});
+                }
+                render() {  // invoked when setState is called
+                    return (
+                        <div> Count: {this.state.count}
+                        <button type="button"
+                            onClick= {this.incrementCount.bind(this);}>
+                            Increment
+                        </button>
+                        </div>
+                    );
+                }
+            };
+
+            <!-- Example 2 -->
+            React.render(
+                <div>
+                    <LikeButton name= "Java" />
+                    <LikeButton name= "JavaScript" />
+                </div>,
+                document.getElementById('container')
+            );
+
+            class LikeButton extends React.Component {
+                constructor(props){
+                    super(props);
+                    this.state = {liked: false};
+                }
+                toggle() {
+                    this.setState({liked: !this.state.liked});
+                }
+                render(){
+                    var name = this.props.name;
+                    var txt = this.state.liked ? 'Unlike' : 'Like';
+                    var myColor = this.state.liked ? 'red' : 'black';
+                    var weight = this.state.liked ? 'bold' : 'normal';
+                    return (
+                        <p><span style={{color:myColor, fontWeight:weight}}>
+                            {name} </span>
+                            <span onClick={this.toggle.bind(this)}>
+                                {'\ud83d\udc4d' + txt}
+                            </span> </p> );
+                }
+            };
+
+            <!-- Example 3 -->
+            class myText extends React.Component {
+                constructor(props){
+                    super(props);
+                    this.state = { bold: false, color: 'black'};
+                }
+                handleMouseOver(){
+                    // we should always use 'setState', and not directly change the state.
+                    this.setState({bold: true});
+                }
+                handleMouseOut() {
+                    this.setState({bold: false});
+                }
+                handleClick(){
+                    if (this.state.color == 'red')
+                        this.setState({color: 'black'});
+                    else
+                        this.setState({color: red});
+                }
+                render() {
+                    var myColor = this.state.color;
+                    var weight = this.state.bold ? 'bold': 'normal';
+                    return (
+                        <span style={{color: myColor, fontWeight:weight}}
+                        onClick={this.handleClick.bind(this)}   // to bind 'handleClick' to the 'onClick' event.
+                        onMouseOver={this.handleMouseOver.bind(this)}
+                        onMouseOut = {this.handleMouseOut.bind(this)}>
+                        {this.props.text}
+                    </span>
+                    );
+                }
+            };
+
+            ReactDOM.render(
+                <div><myText text="Look at me!"></div>,
+                    document.getElementById('container')
+            );
+        </script>
+    </body>
+</html>

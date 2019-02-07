@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- add library -->
+    <!-- <script src="jquery.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <p>Open js console</p>
+    <button id="clickMe">Click me!</button>
+    You have clicked the button <span id="numClicks">0 times</span>
+    <script>
+        var clicks = 0;
+        function clickHandler() {
+            clicks++;
+            // var numClicksSpan = document.getElementById('numClicks'); // js code
+            var numClicksSpan = $('#numClicks');  // jquery code
+            if (clicks == 1) {
+                // numClicksSpan.innerHTML = 'once'; // js code
+                numClicksSpan.html('once');  // jquery code
+            } else {
+                // numClicksSpan.innerHTML = clicks + ' times'; // js code
+                numClicksSpan.html(clicks + ' times');  // jquery code
+            }
+        }
+        // var button = document.getElementById('clickMe');
+        // var button = $('#clickMe');  // jquery code
+
+        // button.addEventListener('click', clickHandler);
+        // button.click(clickHandler);  // jquery code
+
+        // Rewrite previous two lines:
+        $('#clickMe').click(clickHandler);
+        // where:
+        // $('#clickMe')    - element
+        // .click           - event
+        // (clickHandler);  - callback function
+    </script>
+
+</body>
+
+</html>

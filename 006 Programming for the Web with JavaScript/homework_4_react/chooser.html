@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Font Chooser</title>
+        <!--
+            <script src="https://unpkg.com/react@latest/dist/react.js"></script>
+            <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+        -->
+        <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+        <script
+            src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"
+            crossorigin
+        ></script>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+        <!-- <script src="FontChooser.js" type="text/jsx"></script> -->
+    </head>
+    <body>
+        <div id="container"></div>
+
+        <script type="text/jsx">
+                  class FontChooser extends React.Component {
+                    constructor(props) {
+                        super(props);
+                        this.state={hidden: true, bold: false, size: Number(this.props.size), color: 'black'};
+                    }
+                    showAll() {
+                      this.setState({hidden: !this.state.hidden});
+                    }
+                    onBoldCheck(e) {
+                      this.setState({bold: e.target.checked})
+                    }
+                    decreaseFont() {
+                      var color = this.state.color;
+                      if (this.state.size > this.props.min) {
+                        if (this.state.size - 1 == this.props.max || this.state.size - 1 == this.props.min) {
+                          color = 'red';
+                        } else {
+                          color = 'black';
+                        }
+                        this.setState({size: this.state.size - 1, color: color});
+                      }
+                    }
+                    increaseFont() {
+                      var color = this.state.color;
+                      if (this.state.size < this.props.max) {
+                        if (this.state.size + 1 == this.props.max || this.state.size + 1 == this.props.min) {
+                          color = 'red';
+                        } else {
+                          color = 'black';
+                        }
+                        this.setState({size: this.state.size + 1, color: color});
+                      }
+                    }
+
+                    render() {
+                        var myColor = this.state.color;
+                        var textStyle = {
+                            fontWeight: this.props.bold === 'true' || this.state.bold ? 'bold': 'normal',
+                            fontSize: this.state.size + 'px'}
+                        var defaultChecked = this.props.bold === 'true' ? true: false
+                        return (
+                            <div>
+                                <input type="checkbox" id="boldCheckbox" hidden={this.state.hidden}
+                                  defaultChecked={defaultChecked} onChange={this.onBoldCheck.bind(this)} />
+                                <button id="decreaseButton" hidden={this.state.hidden}
+                                    onClick={this.decreaseFont.bind(this)}>
+                                    -
+                                </button>
+                                <span id="fontSizeSpan" hidden={this.state.hidden} style={{color: myColor}}>
+                                    {this.state.size}
+                                </span>
+                                <button id="increaseButton" hidden={this.state.hidden}
+                                    onClick={this.increaseFont.bind(this)}>
+                                    +
+                                </button>
+                                <span id="textSpan" style={textStyle}
+                                onClick={this.showAll.bind(this)}>{this.props.text}</span>
+                            </div>
+                        );
+                    }
+                }
+
+
+            ReactDOM.render(
+              <div>
+                <FontChooser min='4' max='40' size='16' text='Fun with React!' bold='false'/>
+               </div>,
+            document.getElementById('container'))
+            ;
+        </script>
+    </body>
+</html>

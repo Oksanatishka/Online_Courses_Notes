@@ -1,0 +1,110 @@
+IoT system (transportation of data): sensors and actuators --> controllers --> the Cloud.
+Sensor to Micro --> Micro to server --> Server to Cloud --> Data moving in the data center.
+
+There are different ways to transport data – known as protocols – and each have situations 
+for which they are suited, and a way for the transport to happen successfully.
+
+Types of networks:
+1. Personal Area Network (PAN) or Wireless Personal Area (WPAN). Example: Bluetooth
+2. Local Area Network (LAN); It is a wired or wireless (WLAN) network that interconnects devices 
+located in a small, geographical area, such as a home, office, campus, or factory. Example: Router
+WLAN - Wireless Local Area Network 
+3. Wide Area Network (WAN). It  is a network that covers a large geographic area and connects LANs together. 
+It is managed and owned by service providers and has a lower speed bandwidth compared to LAN.
+
+
+Datagram (it's each piece of data (a collection of many bits))
+Packet switching --> Routing
+Host (it's an addressable (network identifiable) device that sends and receives datagrams). Example: PCs, 
+laptops, printers, routers, smart phones, tables, sensors, cameras, and actuators.
+
+Internet Protocol (IP) address
+There are two forms of IP addresses: IP version 4 (IPv4) and IP version 6 IPv6). 
+Default gateway for a host is the IP address of the router interface that all hosts on one network are connected to.
+
+There are two methods to assign IP addresses to hosts:
+- Static (manual) configuration
+- Dynamic (automatic) configuration
+
+The Domain Name Server or DNS is where computers look up addresses. The DNS turns a request like facebook.com 
+into a number (IP address) 157.240.8.35. If a computer requests a domain name and that server doesn’t have it, 
+it forwards the request to another DNS server in a hierarchical structure.
+
+
+The key components of networks are:
+devices
+media
+services
+
+Cables:
+- copper
+- fibre optic
+- wireless
+
+Network Interface Card (NIC):
+- Ethernet NIC
+- Optic fibre NIC
+- WiFi NIC
+
+1. Bandwidth - amount of data that can possibly flow. Measured in kilobits per second (kb/s), (Mb/s), or (Gb/s).
+2. Throughput - amount of data that is actually transferred.
+3. Goodput - amount of usable data that is transferred.
+
+Packet Tracer is a visual simulation tool developed by Cisco Systems to help learners in the networking and IoT 
+space. Anyone can download Packet Tracer for free. https://www.netacad.com/courses/packet-tracer
+
+Mobile wireless technologies
+Wireless technologies use electromagnetic waves to carry information between devices.
+Electromagnetic waves (electromagnetic radiation) travel through space-time (i.e. they don’t need 
+a medium like water or air), and they carry electromagnetic radiant energy.
+Because they are waves they have a frequency and wavelength.
+
+Near-field communication (NFC) is a set of communication protocols that enable 
+two electronic devices - typically portable devices such as smartphones - to establish 
+low-speed communication by bringing them within 4 cm (1.6 in) of each other.
+NFC devices are used in contactless payment systems (in credit cards and electronic ticket smartcards).
+
+Internet standards organisations:
+https://www.ieee.org/
+https://www.iana.org/
+https://www.ietf.org/
+https://www.icann.org/
+https://www.itu.int/ru/Pages/default.aspx
+https://www.tiaonline.org/
+https://www.w3.org/
+
+Layered network models:
+1. The Open Source Interconnect (OSI) model
+| Physical - Data link | - | Network | - | Transport | - | Session - Presentation - App |
+2. TCP/IP (Transport Control Protocol/Internet Protocol)
+| Network Access | - | Internet | - | Transport | - | App |
+Where OSI is a conceptual model, TCP/IP is a working model.
+
+In Encapsulation – headers (and trailers) are progressively added as data moves through the layers.
+In Decapsulation – headers (and trailers) are progressively removed as data moves through the layers.
+
+Data link layer addressing - MAC addressing (media access control)
+The standard (IEEE 802) format for printing MAC-48 addresses in human-friendly form is six groups 
+of two hexadecimal digits, separated by hyphens (-); e.g. 01-23-45-67-89-ab.
+
+Subnet mask
+An IPv6 address is a 128-bit value (remember IPv4 was 32 bit).
+
+The information that a router uses to determine where to send a packet is its routing table.
+Three parts of a route:
+- The destination network address (and network prefix)
+- The IP address of the next hop router that provides a route to the specified network
+- The router interface (port) that connects to the next hop router
+
+================================================================================================
+
+IoT devices are usually placed in resource-limited environments, such as: 
+- remote and isolated agricultural applications;
+- mobile and lightweight medical devices that need be powered for long periods of time in a variety of locations;
+- outside for smart city applications; and
+- many other scenarios where there are power and network connection constraints.
+
+IoT application protocols 
+1. Constrained Application Protocol (CoAP) 
+2. Message Queuing Telemetry Transport (MQTT)
+

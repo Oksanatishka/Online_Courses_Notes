@@ -1,0 +1,299 @@
+Lecture Slideshows:
+1) Overview, JavaScript http://cdn.cs50.net/mobile/2018/spring/lectures/0/lecture0.pdf
+2) JavaScript, ES6 http://cdn.cs50.net/mobile/2018/spring/lectures/1/lecture1.pdf
+3) React, Props, State http://cdn.cs50.net/mobile/2018/spring/lectures/2/lecture2.pdf
+4) React Native http://cdn.cs50.net/mobile/2018/spring/lectures/3/lecture3.pdf
+5) Lists, User Input http://cdn.cs50.net/mobile/2018/spring/lectures/4/lecture4.pdf
+6) User Input, Debugging http://cdn.cs50.net/mobile/2018/spring/lectures/5/lecture5.pdf
+7) Navigation http://cdn.cs50.net/mobile/2018/spring/lectures/6/lecture6.pdf
+8) Data http://cdn.cs50.net/mobile/2018/spring/lectures/7/lecture7.pdf
+9) Expo http://cdn.cs50.net/mobile/2018/spring/lectures/8/lecture8.pdf
+10) Redux http://cdn.cs50.net/mobile/2018/spring/lectures/9/lecture9.pdf
+11) Async Redux, Tools http://cdn.cs50.net/mobile/2018/spring/lectures/10/lecture10.pdf
+12) Performance http://cdn.cs50.net/mobile/2018/spring/lectures/11/lecture11.pdf 
+13) Deploying, Testing http://cdn.cs50.net/mobile/2018/spring/lectures/12/lecture12.pdf
+
+Projects: 
+Solutions: https://cs50.github.io/mobile/projects/
+1) TODO app https://docs.cs50.net/mobile/2018/x/projects/0/project0.html
+2) Pomodoro Timer https://docs.cs50.net/mobile/2018/x/projects/1/project1.html
+3) Movie Browser https://docs.cs50.net/mobile/2018/x/projects/2/project2.html
+
+Lectures
+● Overview, JavaScript
+    C is a compiled language.
+    JavaScript is an interpretive language, so an interpreter will read line by line, 
+    execute that code line by line.
+
+    EcmaScript is essentially the latest version of JavaScript
+
+    ---------------------- 1. Types: ----------------------
+    - Dynamic typing
+    - Primitive Types (no methods, imutable)
+        undefined
+        null
+        boolean
+        number
+        string
+        (symbol)
+    - Objects
+
+
+    ---------------------- 2. Typecasting? Coercion ----------------------
+    Coercion is the process by which we change one type to other.
+    - Explicit vs. Implicit coercion
+        const x = 42;
+        const explicit = String(x); // explicit === "42"
+        const implicit = x + "";    // implicit === "42"
+
+    == vs. ===
+        == coerces the Types
+        === requires equivalent Types
+    
+    const x = 42
+    console.log(typeof x)
+    if I run that code (node nameOfFile.js) --> number
+
+    Falsy values is any value that, if cast to bool, becomes false:
+    undefined
+    null
+    false
+    +0, -0, NaN
+    ""
+
+    Truly values:
+    {}
+    []
+    Everything else
+
+
+    ---------------------- 3. Objects ----------------------
+    Objects, of course, the non primitive type.
+
+
+    ---------------------- 4. Prototypal Inheritance ----------------------
+    It's the process by which a more complex object can have methods and properties.
+    - non-Primitive types have a few properties/methods 
+    associated with them
+        - Array.prototype.push()
+        - String.prototype.toUpperCase()
+    - Each object store a reference to its prototype
+    - Properties/methods defines most tightly to the 
+    instance have priority
+    arr.__proto__
+
+    Most Primitive types have object wrappers
+    - String()
+    - Number()
+    - Boolean()
+    - Object()
+    - (Symbol())
+    
+    JS will automatically "box" (wrap) primitive values so you
+    have access to methods
+    42.toString()   // Errors
+    const x = 42;
+    x.toString()    // "42"
+    x.__proto__     // [Number: 0]
+    x instanceof Number     // false
+
+
+    ---------------------- 5. Scope ----------------------
+    Scope is basically how long a variable lives.
+    - Variable Lifetime
+        - Lexical scoping (var): from when they're declared until
+        when their functions ends
+        - Block scoping (const, let): until the next } is reached
+const is something which won't be updated
+    - Hoisting
+        - Function definitions are hoisted but not lexically 
+        scoped
+
+    ---------------------- 6. JS Execution ----------------------
+    The JS Engine
+    - Before executing the code, the engine reads the entire file
+    and will throw a syntax error if one is found
+        - Any f-n definitions will be saved in memory
+        - Variable initializations will not be run but lexically-scoped
+        variable names will be declared
+        
+
+    this is another way of declaring variable (global variable):
+    thisIsAlsoAVariable = "hello"
+    
+
+    ---------------------- 7. The Global Object ----------------------
+    - All variables and f-ns are actually parameters and 
+    methods on the global object 
+        - Browser global object is the 'window' object
+        - Node.js global object is the 'global' object
+        In terminal: node --> global
+
+
+    ---------------------- 8. Closures ----------------------
+    - Functions that refer to variable declared by parent f-n
+    - Possible because of scoping
+
+
+
+● JavaScript, ES6
+    ---------------------- 1. ES5, ES6, ES2016, ES2017, ES.Next ----------------------
+    ECMAScript is basically the spec for this language. It defines exactly what this language should do and how much of these functions behave.
+    And JavaScript is actually an implementation of ECMAScript spec. 
+    - ECMAScript vs JavaScript
+    - What do most environments support?
+    - Transpilers (Babel, TypeScript, CoffeeScript, etc.)
+        A transpiler is basically some code that goes from newer language features and actually makes it backwards compatible with the ES5 spec. 
+        So, basically, it takes all of your new language, any functions you are using that is defined by ES6, ES2016 and beyond, and actually 
+        turns them into code that's basically ES5 code. So some of these, the most popular one is probably Babble.
+    - Which syntax should I use?
+
+    ---------------------- 2. Closures ----------------------
+    - Functions that refer to variables declared by parent function still have access to those variables
+    - Possible because of JavaScript’s scoping
+
+    ---------------------- 3. Immediately Invoked Function Expression (iife) ----------------------
+    - A function expression that gets invoked immediately
+    - Creates closure
+    - Doesn’t add to or modify global object
+
+    ---------------------- 4. First-Class Functions ----------------------
+    - Functions are treated the same way as any other value
+        - Can be assigned to variables, array values, object values
+        - Can be passed as arguments to other functions
+        - Can be returned from functions
+    - Allows for the creation of higher-order functions (hof)
+        - Either takes one or more functions as arguments or returns a function
+        - map(), filter(), reduce()
+
+    ---------------------- 5. Synchronous? Async? Single-Threaded? ----------------------
+    - JavaScript is a single-threaded, synchronous language
+    - A function that takes a long time to run will cause a page to become unresponsive
+    - JavaScript has functions that act asynchronously
+    - But how can it be both synchronous and asynchronous?
+
+    ---------------------- 6. Asynchronous JavaScript ----------------------
+    - Execution stack
+    So if you imagine a deck of cards, say you have cards called 5, 4, 3, 2, 1, and you place 5, 4, 3, 2, and 1 on the stack, the first thing that you get back is 1 and then 2, 3, 4, 5.
+    As opposed to something like a queue where it's like a line of people where the first person in line is the first person who comes out.
+    - Browser APIs
+    - Function queue
+    - Event loop
+
+    ---------------------- 7. Execution Stack ----------------------
+    - Functions invoked by other functions get added to the call stack
+    - When functions complete, they are removed from the stack and the frame below continues executing
+
+    ---------------------- 8. Asynchronous JavaScript ----------------------
+    - Execution stack
+    - Browser APIs
+    - Function queue
+    - Event loop
+
+    ---------------------- Asynchronous JavaScript ----------------------
+    - Asynchronous functions
+        - setTimeout()
+        - XMLHttpRequest(), jQuery.ajax(), fetch()
+        - Database calls
+
+    ---------------------- 9. Callbacks ----------------------
+    - Control flow with asynchronous calls
+    - Execute function once asynchronous call returns value
+        - Program doesn’t have to halt and wait for value
+
+    ---------------------- 10. Promises ----------------------
+    - Alleviate “callback hell”
+    - Allows you to write code that assumes a value is returned within a success function
+    - Only needs a single error handler
+
+    ---------------------- 11. Async/Await ----------------------
+    - Introduced in ES2017
+    - Allows people to write async code as if it were synchronous
+
+    ---------------------- 12. this ----------------------
+    - Refers to an object that’s set at the creation of a new execution context (function invocation)
+    - In the global execution context, refers to global object
+    - If the function is called as a method of an object, `this` is bound to the object the method is called on
+
+    ---------------------- 13. Setting `this` manually ----------------------
+    - bind(), call(), apply()
+    - ES6 arrow notation
+
+    ---------------------- 14. Browsers and the DOM ----------------------
+    - Browsers render HTML to a webpage
+    - HTML defines a tree-like structure
+    - Browsers construct this tree in memory before painting the page
+    - Tree is called the Document Object Model
+    - The DOM can be modified using JavaScript
+
+    ---------------------- 15. Assignment ----------------------
+    - Create a TODO app
+    - Will use JS DOM manipulation
+
+● React, JSX
+Classes
+    - Syntax introduced in ES6
+    - Simplifies the defining of complex objects with their own prototypes
+    - Classes vs instances
+    - Methods vs static methods vs properties
+    - new, constructor, extends, super
+React
+    - Allows us to write declarative views that “react” to changes in data
+    - Allows us to abstract complex problems into smaller components
+    - Allows us to write simple code that is still performant
+Imperative vs Declarative
+    - How vs What
+    - Imperative programming outlines a series of steps to get to what you want
+    - Declarative programming just declares what you want
+React is Declarative
+    - Imperative vs Declarative
+    - The browser APIs aren’t fun to work with
+    - React allows us to write what we want, and the library will take care of the DOM manipulation
+React is Easily Componentized
+    - Breaking a complex problem into discrete components
+    - Can reuse these components
+        ○ Consistency
+        ○ Iteration speed
+    - React’s declarative nature makes it easy to customize components
+React is Performant
+    - We write what we want and React will do the hard work
+    - Reconciliation - the process by which React syncs changes in app state to the DOM
+        ○ Reconstructs the virtual DOM
+        ○ Diffs the virtual DOM against the DOM
+        ○ Only makes the changes needed
+Writing React
+    - JSX
+        ○ XML-like syntax extension of JavaScript
+        ○ Transpiles to JavaScript
+        ○ Lowercase tags are treated as HTML/SVG tags, uppercase are treated as custom components
+    - Components are just functions
+        ○ Returns a node (something React can render, e.g. a <div />)
+        ○ Receives an object of the properties that are passed to the element
+Props
+    - Passed as an object to a component and used to compute the returned node
+    - Changes in these props will cause a recomputation of the returned node (“render”)
+    - Unlike in HTML, these can be any JS value
+State
+    - Adds internally-managed configuration for a component
+    - `this.state` is a class property on the component instance
+    - Can only be updated by invoking `this.setState()`
+        ○ Implemented in React.Component
+        ○ setState() calls are batched and run asynchronously
+        ○ Pass an object to be merged, or a function of previous state
+    - Changes in state also cause re-renders
+React Native
+    - A framework that relies on React core
+    - Allows us build mobile apps using only JavaScript
+        ○ “Learn once, write anywhere”
+    - Supports iOS and Android
+
+
+● Components, Props, State, Style
+● Components, Views, User Input
+● Debugging
+● Data
+● Navigation
+● Expo Components
+● Redux
+● Performance
+● Shipping, Testing

@@ -1,0 +1,1492 @@
+Week 1 - Web Programming Basics: 
+    how web browsers and servers communicate using HTTP; 
+    creating static web content with HTML and CSS
+Week 2 - Using JavaScript to Create Dynamic Web Pages: 
+    basics of the JavaScript programming language; 
+    accessing HTML elements from embedded JavaScript using the DOM and jQuery
+Week 3 - Client-Side Frameworks for Developing Modular Web Page Components: 
+    component-based web app development using React; 
+    creating data-driven documents with D3.js
+Week 4 - Building Scalable Web Apps with Server-Side JavaScript: 
+    generating dynamic content on the server using Node.js and Express; 
+    storing and retrieving data in MongoDB; 
+    developing an API for the web
+
+======================================================================================================
+
+- HTML & CSS
+- Bootstrap (advanced web page layout and responsive design tool)
+- Document Object Model (DOM) (how browsers represent a web page data)
+- JavaScript + advanced language features such as callbacks, events, and asynchronous programming
+- jQuery (provides functionality for simplified DOM manipulation and event handling)
+- modern web frameworks and component-based libraries such as 
+    React for efficiently developing modular web page components, and 
+    D3.js for creating data-driven documents.
+- JavaScript Object Notation (JSON) (how to represent and exchange data)
+- RESTful APIs
+
+- Server-side JavaScript: with web frameworks such as Node.js and Express making it simple to create and deploy complex, data-driven web applications.
+- MongoDB (NoSQL database)
+
+
+1) Introduction to the Internet and the World Wide Web
+www != internet
+internet - is a hardware
+www - is a software. It's an app that operates over the Internet.
+
+Web pages addresses: 
+- URI - Uniform Resource Identifier 
+- URL - Uniform Resource Locator
+
+http:// - protocol
+www.example.com - host name
+    example.com - domain name
+/home/index.html - file path
+?a=12&b=34 - query parameters
+
+Content on the www
+- static
+    Technologies: HTML, CSS
+- dynamic
+    Technologies: JS
+
+
+2) How a Web Browser Works
+Main Components of the Browser:
+- Rendering Engine: HTML, CSS
+- JS Engine: JS
+
+How does a web browser work? - Browser and www utilize HTTP to transfer documents
+1. Client sends request (to server)
+2. Server sends response (to client)
+
+HTTP is based on a client-server model.
+
+HTTP Request:
+- First line of request will always be a verb followed by an argument:
+    - GET - retrieve resources
+    - HEAD - retrieve only headers (info about the resource)
+    - POST - create resources (ususally used in form submission context)
+- Next comes to the protocol (ususally HTTP/1.1)
+- Optionally include other info about the request and/or the client
+
+HTTP Request Example:
+[request verb] [uri]    [http version]
+GET /examples/index.html HTTP/1.1   - Request line
+Host: www.edx.org                   - Request headers
+User-agent: Mozilla/4.0 
+Accept-language: en-us
+Content-length: 9
+                                    - Blank line Separator
+a=12&b=34                           - Request Message Body
+
+
+HTTP Response:
+- First line is always protocol and status code
+    - 1XX - info only
+    - 2XX - success
+    - 3XX - client redirect
+    - 4XX - client error
+    - 5XX - server error
+- Header info
+- Then a blank line
+- Then the response Body, i.e. the resource that was requested
+
+Most Common Status Codes:
+- 200 OK - request succeded
+- 404 Not Found - requested resources doesn't exist
+- 500 Server Error - Error on the server side in the processing request
+
+HTTP Response Example:
+[http version]  [status code]                  
+HTTP/1.1 200 OK                         - Response Line
+Date: Fri, 06 Apr xxxx 09:30:00 GMT     - Response headers
+Server: Apache/1.4
+Last-modified: Wed, 04 Apr xxxx
+Connection: close
+Content-type: text/html
+Content-Length: 228
+                                        - Blank Line Separator
+< !DOCTYPE html><html><head>... .       - Response Body (Resourse)
+
+
+3) Introduction to HTML
+Important html tags:
+For HTML5, doctype declaration is as follows: < !DOCTYPE html> 
+<html>
+<head>
+    <title>
+    <link>
+    <meta>
+    <script>
+<body>
+
+Basic HTML tags:
+<p>
+<h#>
+<b> / <i> / <strong> / <em>
+<hr> / <br>
+<div> / <span>
+<!-- comments -->
+
+HTML Symbols & Special Characters
+&nbsp;  non-breaking space
+&lt;    <
+&gt;    >
+&amp;   &
+&copy;  copyright sign 
+&reg;   registration sign
+
+HTML Formatting and Attributes (id / class)
+key:value pairs
+title=""
+style=""
+    background-color
+    font-family
+    font-size
+    text-align
+    color
+
+
+4) Introduction to CSS
+How do we use CSS?
+- inline - tag's "style" attribute
+- internal - <style> element
+- external - separate css file
+
+CSS selectors:
+- Element Selector: h1
+- Class Selector: .address
+- Id Selector: #selector1
+
+HTML Lists and Forms
+<ol type="A / 1 / a / I / i">
+<ul style="list-style-type: circle / disc / square / none">
+
+Forms (input types)
+- Text inputs
+    Full name: <input type="text" name="username">
+    Email address: <input type="email" name="email">
+    Password: <input type="password" name="password">
+    Date of Birth: <input type="date" name="dob">
+- Slider / Range input
+    Graduation Year: <input type="range" name="gradYr" min="1950" max="2020">
+- Radio Buttons
+    Gender: <input type="radio" name="genderOption" value="male"> male
+    <input type="radio" name="genderOption" value="female"> female
+    <input type="radio" name="genderOption" value="undisclosed"> undisclosed
+- Checkboxes
+    Race: <input type="checkbox" name="race" value="asian"> asian
+- Color Chooser
+    <input type="color" name="favColor">
+- File Uploads
+    Resume Submission: <input type="file" name="resume">
+- Buttons
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+
+- date
+- email
+- hidden
+- image
+- month
+- time
+- number
+- search
+- tel 
+- url
+
+HTML links, images, and tables
+<img>   attributes: src/alt/height/width/title
+<a>     attributes: href / target
+<table>
+
+Bookmark
+<h3 id="health">Healthy Eating</h3>
+<a href="#health">Jump to Healthy Eating Section</a>
+
+
+Responsive Web Design with Bootstrap (by Twitter)
+https://getbootstrap.com/ 
+- "Mobile-first" library
+- CSS with predefined tags for developer's use
+- Includes UI components, layouts, and other tools
+
+Bootstrap Grid System - includes between 1 to 12 columns depending on the scale of device viewport
+Using Bootstrap:
+- CSS: include /bootstrap.min.css within the <head> tag
+- JS: include /bootstrap.min.js within the <head> tag
+- utilize 'mobile-first' framework:
+    <meta name="viewport" content="width=device-width, initial-scale=1"
+- add content in the <body> 
+    - create a <div> using the "container" class
+
+
+======================================================================================================
+
+5) Introduction to JavaScript
+JS was developed at Netscape Communications in mid 1990s. 
+Originally known as "LiveScript".
+
+Developing in JS:
+1) js can be embedded directly in the html inside <script> tags and/or using <link> tags to external .js files
+2) Chrome provide a js "REPL"(read, evaluate, print, loop) console for writing and evaluating code
+3) develop js in .js file and execute it in runtime environment such as Node.js
+
+Each language consist of:
+- variables, arrays, objects
+- loops and conditional statements
+- functions
+
+JavaScript variables
+Declaring a variable:
+var age = 22;
+var name = 'Jane Doe';  //string
+var isMale = false;
+
+Ways to see the variable's value:
+- document.write()
+- console.log()
+- alert(var);
+- using the browser js console(REPL), just type the name of the variable
+
+The type of each variable doesn't need to be specified and can be changed at any time.
+
+Primitive types:
+- number    e.g. 
+    5, All js numbers are stored using floating-point notation, i.e. 5 is stored internally as 0.5e1
+    1.25, 
+    1.1e5, 
+    NaN, e.g. Number('tree') would return NaN
+    +Infinity, represents all numbers greater than Number.MAX_VALUE(around 10 в 308 степени)
+    -Infinity, represents all numbers less than Number.MIN_VALUE(around 10 в -324 степени)
+- string    'hello'
+- boolean   false/true
+- Null      null(no value, empty value)
+- Undefined undefined (I haven't seen this before, I don't have any value for it)
+
+Number operations: +, -, *, /, %, ++, --
+
+Strings:
+    - are series of 16-bit unsigned integers, each integer representing a character
+    - 'I am a cat' vs. "I'm a cat"
+    - backslash: '\n \t \\'
+String functions: 
+    + or .concat(otherString)   // to concatenate strings
+    toUppercase(), toLowercase()
+    var.length gets the length of a string
+
+boolean
+    - Any value can be used as a boolean in JS
+        Falsy values: null, undefined, 0, NaN, ''(empty string)
+        Truthy values: 'cow', 'false', 5, etc
+    - Any variable type can become a boolean when used with logical operators
+
+Null represents "no value"
+    var occupation = null;
+    console.log(occupation);    // null
+
+Undefined - var was declared but "no value" has been assigned
+    var salary;
+    console.log(salary)         // undefined
+
+Non-Primitive types (store a list of values with different types):
+- arrays 
+    - Elements can be added to arrays using 
+        push() - end of array and 
+        unshift() - beginning
+    - Elements can be removed from arrays using 
+        pop() - from the end
+        shift()- from the beginning
+- objects (used to store key-value pairs)
+    - Values can be accessed by myObject.property OR myObject['property']
+    - it's related to object-oriented programming
+    - Modifying objects: Key-value pairs can be added to objects, even after their initial declaration 
+
+
+JavaScript control structures
+- Conditional statements: if/else
+    Comparison Operators: ==, ===(equal to and same type), !=, !==, >, >=, <, <=
+        1 == '1'    // true
+        1 === '1'   // false - different types
+        5 < '20'    // true - JS will try to convert the string to a numeric form
+        '5' < 20    // true 
+        5 > 'cat'   // false - non-numeric strings are converted to NaN
+        'zebra' > 'giraffe' // true - non-numeric strings are compared alphabetically
+        Comparison Objects: objects are equal if refer to the same object
+            var cooper = { age : 11 }
+            var flanders = { age: 11 }
+            if (cooper == flanders){...}    // false!
+            var mydog = cooper;
+            if (mydog == cooper) {...}      // true!
+    Logical Operators: ||, &&, !
+- Loops
+    - for
+    - while
+    - do while - is guaranted to execute at least once and then check the condition at the end.
+
+
+JavaScript functions (are objects)
+- var_arr.forEach(f-n) - to apply function to each element of array
+- js f-ns can also be declared and used in objects
+
+Object Prototypes
+- Every object in JS has a prototype, accesssed from the _proto_ propeerty in the object.
+- The _proto_ property is also an object, with its own _proto_ property and so on.
+- The root prototype of all objects is Object.prototype
+- An object inherits the properties of its prototype
+Prototypes are created like any other JS f-n or object.
+The this keyword refers to the current prototype.
+The new keyword can be used to create new objects from the same prototype.
+
+A JS prototype f-n is a f-n that can be used to create objects.
+
+
+JavaScript regular expressions (regex)
+Strings: We can access each character by its (0-based) index using charAt or array notation.
+JS strings are immutable!
+    var animal = 'cat'
+    animal[0] = 'r'
+    console.log(animal);     // still 'cat'
+We can modify a string but these f-ns return a new string (since strings are immutable!).
+    var friend = 'turtle'
+    friend.toUpperCase();       // 'TURTLE'
+    console.log(friend);        //  'turtle'
+
+    var message = ' hello world ';
+    message = message.trim();           // 'hello world'
+
+    var myAnimal = 'cat'.concat('mouse');
+
+Searching Strings:
+We can determine whether a string starts with, ends with, or includes other strings.
+    var msg = 'programming in JS is fun';
+    msg.startsWith('programming');          // true
+    msg.startsWith('PROGRAMMING');          // false
+    msg.endsWith('is fun');                    // true
+    msg.includes('JS');                         // true
+We can also get the starting index of a contained substring:
+    var title = 'the title of my book';
+    var start = title.search('title');      // 4 
+    start = title.search('banana');         // -1
+
+Regular expressions is a pattern of characters.
+    var status = 'I am working VERY hard';
+    status.search(/VERY/);          // 13, where very is a reg exp indicated by two slashes
+    status.search(/very/);          // -1
+    status.search(/very/i);          // 13 - i - insensitive
+
+    var numbers = '5 8 2 5 7 6';
+    numbers.search(/[012]/);        // 4
+    /[012]/.test(numbers);          // true
+
+    var password = 'password4real';
+    password.search(/[a-z]/);       // 0
+    password.search(/\d/);          // 8, where \d means digits
+
+    var code = 'abc123d4e5';
+    code.search(/[0-9][a-z][0-9]/);     // 5
+
+
+
+Introduction to the DOM
+DOM - document object model - is a structured tree representation of a web page.
+The HTML of every web page is turned into a DOM representation of a web page.
+The root DOM object can be accessed by the object called document.
+Elements in this DOM tree can be retrieved and manipulated.
+Data can be stored in the browser across multiple page requests using localStorage.
+
+Objects as JSON (JS Object Notation)
+JSON is a textual representation of a JS Object that can be stored as a string, in a .json file, or be exchanged between programs.
+
+Converting between JSON and Objects:
+- JS objects can be converted to a JSON string via JSON.stringify(myObject)
+- String representation can be converted back to an object via JSON.parse(jsonString)
+- All values must be a string, number, array, boolean, null,or another valid json object.
+
+JS can use the DOM to retrieve / modify html elements:
+- document.getElementById('id')
+- element.innerHTML
+- element.style
+
+localStorage global variable can be used to store data in the browser across multiple page requests.
+
+
+DOM events
+Ordinarily we think of a program as a sequence of instructions and functions calls.
+Event-driven programming is when a program's behavior is based on events (user actions).
+Different events/actions invoke different callback functions which handle that event/action.
+
+Event-driven programming is a form of asynchronous programming.
+Synchronous way:
+    - you are expecting a user input
+    - you continuously re-check a text field until the user has put in the required info
+    - you run some code on the user input
+Event-driven / asynchronous way: 
+    - you are expecting a user input
+    - you tell your browser to let your program know when the user has put in the required info
+    - you (possibly) run other code until your browser notifies you
+    - when the user has entered the info you run the associated callback function.
+
+We use event-driven programming in JS to modify HTML based on user activity.
+We do this by defining callback f-ns and associating them with various events by adding event listeners:
+    - element.addEvenListener(event, function);
+    - Events: 'click', 'mouseover', 'mouseout', 'keyup'
+
+
+6) Introduction to jQuery
+Reasons to use it:
+- different browsers may work in different manners
+- the syntax can be a bit clunky
+- many features are hard to implement
+jQuery:
+- simplifies js usage on webapps
+- more intuitive way of DOM manipulation
+- great cross-browser support
+- addtional utilities
+- effects and animations
+- customizable plugins
+
+Using jQuery:
+- download the latest version
+- add the .js file to your html webpage using a script tag
+
+- $ is used to select DOM elements for manipulation, along with basic CSS elements syntax
+    $("*") selects all elements
+    $(this) selects the current element
+    $("div") selects all <div> elements
+    $(".title") selects all elements with class="title"
+    $("#name") selects all elements with id="name"
+- To manipulate DOM contents, the general format is $(selector).action(arguments..)
+    e.g. $("#name").html("Hrllo");
+    $("#name").append("World");
+    $("#name").addClass("greeting");
+    $("#name").hide();
+    $("#name").show();
+- To add an event listener to an element, the general format is $(selector).event(callback)
+
+
+jQuery event handling
+We can combine multiple callback functions together into a single object using the ON event.
+
+Advanced selectors:
+    $(someNodes).find(selector) -   will search someNodes' children for selector.
+    $ selectors can be chained 
+        $("div.book")   selects the div with class="book" 
+        $("div, .book") selects all divs and all elements with class="book"
+    : can be used to specify element properties
+        $("p:hidden") selects all <p> elements that are visually hidden
+
+User Events in the browser:
+1) Mouse: click, dblclick, mousedown, mouseup, mouseover, mouseout
+2) Keyboard: keydown, keypress, keyup
+3) Form: focus, blur, change, reset, submit
+4) Window/Element: load, resize, scroll, unload
+
+======================================================================================================
+
+7) ------------------- Introduction to React ------------------- 
+
+React allows to create modular js components that can render themselves based on user actions.
+D3 is a library for creating data-driven documents.
+
+React is js library for building user interfaces.
+- HTML page is composed of recyclable, interactive 'components' that have a lifecycle during which the state of the component changes.
+- Highly efficient because of notion of VirtualDOM.
+- created by Facebook
+
+Features of React:
+1) Modularity: organize code into reusable components that can work together.
+2) Lifecycle maintenance: modifying component based on state; event listeners; simplified conditional rendering.
+3) JSX: write html within js
+
+Components are the core of React.
+
+Developing with React.
+1. Within the page's html, allocate a position on the page in which the desired react component will be rendered, e.g. div
+2. Create a react component in js
+    - establish an initial state
+    - define any events that could change the components' state over its lifecycle
+    - define the function to render the html
+3. Drop the component into position allocated in step 1. 
+
+JSX is js XML Syntax Transform. 
+    - allows users to write html-like tags within js
+    - convert text(html) to react code
+
+DOM vs React Virtual DOM.
+    React Virtual DOM selectively renders HTML elements instead of rendering all elements in the page.
+
+-------------------- React components -------------------- 
+Components are js objects based off the React.Component prototype
+
+Creating React Component:
+React.createClass() allows us to define a component.
+ES6 is a more recent version of js syntax. We can define a class instead of a single object.
+
+The two ways of creating a React component in JavaScript are:
+1) using the 'React.createClass' prototype function, or 
+2) creating a class that extends 'React.Component'
+
+React Component Attributes:
+Both can be used when rendering the component.
+    -   properties  
+            - attributes and values that are set when the component is created
+            - should never be modified after initialization
+        - Component accesses its properties through this.props
+    -   state
+            - attributes and values that represent the current state of the component, based on what it does/represents.
+            - can be modified during the component's lifecycle
+        - Should be initialized in the constructor
+        - Component accesses its state through this.state
+
+The difference between a React component’s properties and its state is that:
+The state can be changed after the component is initialized, but the properties should not be.
+
+Component Lifecycle
+- The React VirtualDOM invokes callback functions on components during their lifecycle
+- This functions fall into three categories:
+    - Mounting
+        Called when a component is being created and added to the VirtualDOM
+        - constructor: creates components, initializes state based on properties
+        - componentWillMount: invoked before component is added to VirtualDOM
+        - componentDidMount: invoked after component has been added to VirtualDOM and has been rendered
+    - Updating
+        Called when a component's props and state is changing and the component is re-rendered
+        - componentWillReceiveProps:
+        - shouldComponentUpdate:
+        - componentWillUpdate:
+        - componentDidUpdate:
+    - Unmounting
+        Called when a component is being removed from a VirtualDOM
+        -  componentWillUnmount:
+        
+- You can optionally implement these for controlling the component
+
+
+-------------------- React events -------------------- 
+Changing Component State: 
+- A component's state typically changes in response to some user action or 'event'
+- We can 'bind' an event to a callback f-n within a React component 
+- That component can then change state using its 'setState' f-n
+- This will automatically re-render the component and any other affected component
+
+-------------------- React component interaction --------------------
+
+-------------------- Using APIs with React -------------------- 
+Software as a Service (SaaS)
+Example:
+    - Google Docs (as oppposed to Microsoft Word)
+    - Gmail (as oppposed to email client like Outlook)
+    - Cloud9(as opposed to Eclipse)
+
+REST: REpresentation State transfer
+
+API: application programming interface
+In web programming, an API is a URL or a set of URLs that return pure data to requests.
+APIs can be used to incorporate data and functionality from other sources in your webapp.
+
+-=-=-=-=-=-=-=- Example -=-=-=-=-=-=-=- 
+Example of how we can use a RESTful API to get content from the New York Times newspaper and 
+include it in our web app using a react component.
+The NYT provides a variety of APIs that provide article data, books data, movies data, and more.
+You can see more about available APIs and request access at https://developer.nytimes.com/
+Our goal: created a webapp that creates a dashboard of clickable NYT article images.
+1) Request a developer key for the Article Search API at https://developer.nytimes.com/
+- You can test out the API and what the returned data looks like at https://developer.nytimes.com/article_search_v2.json
+
+
+-------------------- React application development -------------------- 
+Node.js
+- Node.js is a free, open source platform and framework built in JS.
+- Includes suite of tools that allows user to prepare JS (and thus React) apps for deployment.
+- Utilizes Node.js Package Manger (npm) to install programs and manage dependencies.
+
+Node.js Benefits
+- Instead of including all JS code in a <script> tag, now we can separate the components into
+different files to make code more modular.
+- Node.js allows us to incorporate dependencies of the code within the current file
+    var React = require('react');   // libraries
+    var  ReactDOM = require('react-dom);
+    import myComponent from './myComponent.js';
+
+1) Download & install Node.js and appropriate packages.
+2) Update the npm version to the most recent by using this command 'npm install npm -g'
+3) 'npm install -g create-react-app' will allow you to create React apps using Node. 
+4) Run this command 'create-react-app my-app' in the desired parent directory of new application 
+    to create new React app.  
+5) You can start the default app as follows:
+    cd my-app
+    npm start   // this will start a web server that listens for incoming HTTP requests on port 3000 on your computer.
+6) You can access the web server by accessing http://localhost:3000 from your computer. You will see default 
+React app.
+7) We can now create separate JS files for each component.
+    
+    src/Counter.js
+        var React = require('react');
+        class Counter extends React.Component {
+            constructor(props) { ... }
+            incrementCount() { ... }
+            render() { ... }
+        };
+        export default Counter;     // allows other JS files to use the code, in particular the Counter component.
+    
+    src/App.js
+        import Counter from './Counter.js';
+        class App extends Component {
+            render (){
+                return (
+                    <div className="App">
+                        <Counter />
+                    </div>
+                )
+            }
+        } 
+
+Anatomy of a React App
+- package.json: info about app, lists of dependencies, shortcuts for scripts.
+- public: directory containing HTML files, images, other static web content.
+- src: directory containing JS and CSS files.
+
+Testing React App
+- Mocha  - widely used test runner (testing framework) used to run JS tests
+- Chai   - assertion library for Behavior Driven Testing
+- Enzyme - testing utility for React for manipulation and inspecting React Component state and output.
+
+To include Enzyme and Chai as dependencies, run the command: 
+'npm install --save-dev enzyme react-test-renderer chai'
+
+Note that the default file structure places all JS and CSS in the 'src' folder.
+We will create an additional folder within 'src' named 'tests' in which we include all testing scripts.
+All test files must be in the form  of *.test.js, e.g. Dogs.test.js
+Node.js should create a default App.test.js, or you can write your own.
+Include libraries necessary for testing: 
+    - import React and ReactDOM for component manipulation
+            import React from 'react';
+            import ReactDOM from 'react-dom';
+    - import keywords from Enzyme
+            import { mount, shallow } from 'enzyme';
+    - import keywords from Chai
+            import {expect} from 'chai';
+
+To run tests, navigate to the project within the terminal and run the command: 'npm run test'.
+
+
+
+======================================================================================================
+
+8) ------------------- Introduction to ES6 ------------------- 
+
+ES6 stands for ECMAScript 6.
+ECMAScript is the 'proper' name for JS.
+ES6 is the newest JS Specification, released in 2015.
+ES6 provides simplified syntax and new libraries and functionality. We'll use ES6 notation in the 
+remaining lessons in the course.
+
+
+New features in ES6:
+    - difine constants
+    - use simpler notations for function declarations (using arrays)
+            ES5 syntax:
+                var arr = [1,2,3,4,5];
+                var square = function (n) {
+                    return n*n;
+                };
+                arr.forEach(function(v,i){
+                    arr[i] = square(v);
+                });
+            ES6 syntax:
+                let arr = [1,2,3,4,5];
+                let square = n =>   {
+                    return n*n;
+                }
+                arr.forEach( (v, i) => {
+                    arr[i] = square(v);
+                })
+    - default parameter values:
+            The symbol '=' can be used to assign default values to f-n parameters
+                function pow(base, power = 2) {
+                    return Math.pow(base, power);
+                };
+                console.log(pow(3));    // 9
+                console.log(pow(3,3));  // 27
+    - template literals
+            Can define a template for rendering strings
+            ES5 syntax: 
+                var person = {name: "Lydia"};
+                var msg = "Dear " + person.name + ",\n" + "How are you? ";
+            ES6 syntax:
+                var person = {name: "Lydia"};
+                var msg = `Dear ${person.name},
+                            How are you?`       // ' is the back tick character, and not the standard single quote character.
+    - build classes
+        Instead of building prototypes, ES6 allows classes to be directly defined in more traditional OOP style.
+            ES5 syntax:
+                var Rectangle = function (height, width) {
+                    this.height = height;
+                    this.width = width;
+                }
+                Rectangle.prototype.area = function () {
+                    return this.height * this.width;
+                }
+            ES6 syntax:
+                class Rectangle {
+                    constructor (height, width) {
+                        this.height = height;
+                        this.width = width;
+                    }
+                    area () {
+                        return this.height * this.width;
+                    }
+                }
+    - refactor code into modules
+    - store data in Sets, Maps, and Typed arrays
+        Data Structures: Sets
+            Elements are distinct and maintain order
+                let s =  new Set();
+                s.add("alligator");     // s = {"alligator"}
+                s.add("dolphin");       // s = {"alligator", "dolphin"}
+                s.add("fox");           // s = {"alligator", "dolphin", "fox"}
+                s.add("alligator");     // s = {"alligator", "dolphin", "fox"}
+                s.has("alligator");     // true
+                s.delete("alligator");  // s = {"dolphin", "fox"}
+                for (let v of s.values())
+                    console.log(v);     // prints each value in order
+        Data Structures: Maps
+            A Set of keys is mapped to corresponding values
+                let m = new Map();
+                m.set("dog", "rover");      // {"dog" => "rover"}
+                m.set("cat", "felix");      //{"dog" => "rover", "cat" => "felix"}
+                m.get("cat");               // "felix"
+                m.get("mouse");             // undefined
+                for (let [key, val] of m.entries())
+                    console.log(key + ": " + val);  // prints keys and values
+    - copy objects in one line of code.
+
+
+------------------- Introduction to D3.js -------------------
+
+Standard SVG
+We can render basic visual elements in html using Scalable Vector Graphics (SVG). They don't lose quality 
+when the page is resized.
+
+D3.js is a JS library for manipulating html documents based on data.
+Data can be bound to DOM elements (html, svg) and then we can programatically apply data-driven transformations.
+This can be used for generating html tables, svg charts and graphs,etc.
+
+Include <script src="http://d3js.org/d3.v4.min.js"></script> 
+
+D3.js is a powerful library for generating html and svg elements based on data.
+We can apply functions to data sets to generate graphical elements, e.g. chart.
+And use D3.js to modify the elements when new data is added.
+
+The purpose of the “transform” attribute of an SVG element and the “translate” function is to be able to:
+change the origin point of the element’s coordinate system. 
+    The “transform” attribute in general lets us modify the SVG element in some way, 
+    and the “translate” function change its location, thus affecting the origin of the coordinate system.
+
+Using data with D3
+
+
+-----------------------------------------------------------------------------------------------
+-------------------------------- Javascript on the server -------------------------------------
+-----------------------------------------------------------------------------------------------
+We use node & express to dynamically generate web content.
+We can connect data in a NoSQL db such as MongoDB.
+
+-------------------------------- Introduction to Node.js --------------------------------
+Asynchronous, event-driven JS runtime environment for building web apps.
+Treats HTTP requests as events that invoke callback f-ns/handlers that construct the HTTP response.
+Also includes a package manager(called npm) to simplify the deployment of JS apps.
+
+Installing Node.js
+1) Download, run and finish the package installer (https://nodejs.org/en/download).
+2) Check that installation is correct by using: node -v
+3) Update modules using: npm install npm -g
+
+Setting up a new project:
+1) Create a new folder for your project 
+2) Use Terminal to navigate that folder
+3) Set up a new project by running: npm init
+    - You will be prompted to enter some info about your project
+    - Specify 'index.js' as your entry point.
+
+Example of package.json configuration file:
+
+{
+  "name": "helloworld",
+  "version": "1.0.0",
+  "description": "A basic hello world app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "edX Learner",
+  "license": "ISC"
+}
+
+
+The purpose of using frameworks such as Node.js and Express is to: Use JavaScript 
+to dynamically generate web content on the server. 
+
+-------------------------------- Express --------------------------------
+Express is a web applicaton framework that sits on top of a Node.js server.
+Express is a package that's used by Node that allows us to modularize and steamline the web app.
+Within Express, you can recognize your app in many ways:
+- define separate modules that have different responsibilities.
+- handle requests via different routes and routers
+- split each step in the processing of a request into Middlewares.
+
+Express is not part of the Node installation, so we need to install it separately.
+Adding Express
+1) To use Express, run the following from the folder where you created your Node.js app.
+    npm install express --save
+2) The Express package will be downloaded to the project and added to your package.json as dependency.
+    - Package: is a module of JS code , usually with a specific purpose, that can be re-used and
+    assembled with other modules
+    - Dependency: is a piece of code that your program relies on to work correctly.
+3) Hello World. Create a file named index.js in your Node.js project root directory with the following:
+                var express = require('express');
+                var app = express();
+
+                app.use('/', (req, res) => {
+                    res.send('Hello World');
+                });
+
+                app.listen(3000, () => {
+                    console.log('Listening on port 3000');
+                });
+index.js file is an entry point of our web application.
+4) We've written out program, it's time to run it.
+    - in the project folder, run node index.js (this will start the web server)
+    - when the server starts, you should see 'Listening on port 3000' written to the console/screen.
+    - open a browser on the same computer and go to http://localhost:3000/
+
+
+------------------------- Node requests and responses --------------------------
+- Web browsers communicate with Web servers via http requests and responses.
+- Node.js and Express simplify the development of Web servers to handle HTTP requests and create 
+and return http responses.
+
+An http Request is represented as an object in the Express app. The object is passed as a parameter to the 
+callback f-n/event handler.
+
+- method: the HTTP Request verb/action
+- url: the resource that was requested
+- headers: object containing all headers
+- get(field): request header field
+
+app.use('/', (req,res) => {
+    var method = req.method;
+    var url = req.url;
+    var agent = req.headers['user-agent'];
+    agent = req.get('User-Agent');
+
+    res.send('Hello World');
+});
+
+Node.js/Express Response Objects
+- An http Response is also represented as an object in the Express app.
+- The object is passed as a parameter to the callback f-n/event handler.
+
+Response Object F-ns
+- status: set the http status code
+- type: set the http content type
+- write: add content to the body of the response
+- end: send the response and close the connection
+
+app.use('/', (req,res) => {
+    res.status(200);
+    res.type('html);
+    res.write('Hello World');
+    res.write('<p>');
+    res.write('<b>Have a nice day</b>');
+    res.end();
+});
+
+Combining Requests and Responses
+app.use('/', (req,res) => {
+    var name = req.query.name;  // e.g.  /?name=devesh
+    res.status(200).type('html');
+    if (name) {
+        res.write('Hi, ' + name + "it's nice to see you");
+    }
+    else {
+        res.write('Welcome, guest!');
+    }
+    res.end();
+})
+
+
+- In a Node Express Response object, what is the difference between the “write” and “send” functions?
+- Answer: Both can be used for sending content to the browser, but after “send” is called, the connection is closed.
+
+
+Node routing and middleware 
+The feature of Express that we'll use for creating different responses for different requests is known as routing.
+
+Here we see our index.js file.
+
+
+Middleware
+In Express, middleware is the f-n that is invoked during the handling of an http request.
+It is used in the 'middle' between receiving a request and sending a response.
+Multiple middlewares can be chained together on the same request.
+
+The simplest middleware f-n is express.static, which serves static files that are locally stored.
+
+Middleware f-ns can contain any amount of JS code with any functionality.
+They take three parameters: req, res, and next.
+next() must be called at the end of the f-n to invoke the next middleware or the final response.
+
+Summary:
+- Routing allows us to specify different functionality for different http requests.
+- Routing uses middleware f-ns, each of which handles a different part of the functionality.
+- Middleware f-ns can be chained together and can pass values to each other by modifying the Request object.
+- Routers allow us to combine middleware functions into common 'sub-routes'.
+
+
+
+Sending user data to Node 
+
+Getting Data from Users: HTTP Requests
+- Query parameters
+    - key/value pairs that are part of the URL
+    - can be part of a static URL or be generated by an HTML from using the GET method.
+- POST data
+    - key/value pairs that are included in the body of the HTTP request
+    - Result from an HTML form using the POST method.
+
+Request Object Query properties
+1) An http Request object can include query properties that come from the URL
+http://localhost:3000/?name=Lydia&location=United+States
+
+app.use('/', (req,res) => {
+    var query = req.query;
+    console.log(query);
+
+    var name = query.name;                  // 'Lydia'
+    var location = query.location;          // 'United States'
+    var length = Object.keys(query).length; // 2
+    res.send('Hello World');
+});
+
+2) An http Request object can include param properties that come from a parameterized URL
+http://localhost:3000/name/Lydia/location/United States
+
+app.use('/name/:userName/location/:userLocation', (req,res) => {
+    var params = req.params;
+    console.log(params);
+
+    var name = params.userName;                  // 'Lydia'
+    var location = params.userLocation;          // 'United States'
+
+    var length = Object.keys(params).length; // 2
+    
+    res.send('Hello World');
+});
+
+
+HTML Forms
+- Forms allow users to enter or select data, e.g. via input boxes, checkboxes, radio buttons, etc.
+- The form specifies the ACTION and METHOD that result when the user chooses to submit the form.
+    Action: the URL to be requested (when the user submits the form)
+    Method: the HTTP Request 'verb', e.g. GET or POST
+
+<form action="/handleForm" method="post"> //when we submit the form it'll send an http request for this url (handleForm).
+...
+</form>
+
+POST means that the data from the form is included in the body of the http request.
+GET - the data is sent in the url query parameters.
+
+To read the body of the http request in Express, use the body-parser middleware.
+To install it, run: npm install body-parser
+
+In this example we'll see how we can use the body-parser to access the data.
+
+var express = require('express');
+var app = express();
+// because form was static content, we use express.static middleware to serve static content that starts 
+// with the /public URI.
+app.use('/public', express.static('files'));    
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended: true}));
+// Route for handleForm
+app.use('/handleForm', (req,res) => {
+    var name = req.body.username;
+    var animals = req.body.animal; // this is an array
+    ...
+    res.send('Thank you');
+});
+app.listen(3000, () => {
+    console.log('Listening on port 3000');
+})
+
+Summary:
+We've seen three different ways of getting data from the user:
+1) HTTP Request query properties: key/value pairs that come from URL.
+2) HTTP Request param properties: key/value pairs that come from parameterized URL.
+3) HTTP Request body properties: input data from form submitting using POST method.
+
+But now how do we send data back based on what the user sent to us?
+
+
+Using EJS with Node
+EJS, or EmbeddedJS, is a view engine that uses data and embedded JS to produce html.
+This allows webpages to be developed statically and rendered dynamically server-side.
+EmbeddedJS is a package that can be installed with the command: npm install ejs
+https://ejs.co/
+В iti-marketing мы использовали swig http://node-swig.github.io/swig-templates/
+express view engines: https://expressjs.com/en/guide/using-template-engines.html
+List of Template Engines: https://github.com/expressjs/express/wiki#template-engines
+
+Set EJS as the default rendering method in your app with app.set('view engine', 'ejs');
+Then generate and send the HTML from an .ejs file using the Response's render f-n.
+Arguments to the .ejs file are passed as objects.
+
+var express = require('express');
+var app = require('app');
+app.set('view engine', 'ejs');
+app.get('/', (req,res) => {
+    res.render('welcome', {username: 'CandyLover', isAdmin: true});    // 1st argument - the name of the EJS file
+});
+
+<!-- This is views/welcome.ejs -->      
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Welcome, <%= username %>!</h1> 
+<% if (isAdmin) { %>
+    <p>Remember to check your email every 24 hours! </p>
+<% } %> 
+
+</body>
+</html>
+
+.ejs file is just an HTML file that has some JS code embedded in it.
+Anything between <%= and %> tags will be evaluated and incorporated into the HTML.
+By default, the .ejs files should be in the views/ subdirectory of the Express project.
+Keep in mind that this is running on a server and not in the user's browser.
+EJS will execute any JS that appears between <% and %> tags when generating the HTML page on the server.
+
+
+------------------------- Introduction to MongoDB -------------------------
+Using Node in Express, we can start to build web applications on the server side.
+Then we can use a tool like EJS to separate the form from the functionality,
+separate the HTML from the JavaScript.
+But when it comes to building a big web application that's going to serve dynamic
+content to the users, there's one big piece that's missing, and that's the data.
+So far we've been talking about the client and the server.
+We've seen how the client can render web content in the browser.
+And we've started to look at how the server can generate it.
+But often, in a web application, behind the server, or
+communicating with the server, is some sort of database where we can persistently
+store data that can be accessed on future HTTP requests.
+In this lesson, we're going to talk about what's known as a NoSQL or NoSQL database.
+
+SQL(relational database), or structured query language, or SQL, is the traditional method of storing data,
+where data is stored in tables and tables consist of rows and columns.
+
+Example.
+
+name    age     country     occupation
+Jane    30      USA         Programmer
+John    25      Canada      Doctor
+Kim     27      France      Painter
+
+A NoSQL(MongoDB or Mongo) database is a database that basically does not use SQL.
+Mongo is specifically designed for use with JavaScript apps. 
+MongoDB stores collections of documents(rather than tables of rows) which are just JavaScript objects.
+A NoSQL db like Mongo would represent the data as a collection of documents or objects like this.
+And Mongo can use hashing functions that will allow us to easily find documents,
+rather than having to look through the entire table.
+
+Example (user documents).
+
+{
+    name: 'Jane',
+    age: 30,
+    country: 'USA',
+    occupation: 'Progarmmer'
+}
+
+{
+    name: 'John',
+    age: 25,
+    country: 'Canada',
+    occupation: 'Doctor'
+}
+
+Using MongoDB with a Node.js app
+1) Install MongoDB locally or create an account on a remote service.
+    - download/install instructions at https://www.mongodb.com/download-center/community 
+    - follow these instructions to create a new empty db and run the MongoDB server
+    - When you start it, it will tell you which port it is using (because Mongo
+    is listening for incoming connections using a port on your computer.)
+    
+    $ mongod --dbpath /Users/serhii/Downloads/db_test
+
+    After a second or two, you'll see the message at the bottom that says that database
+    server is waiting for connections on port 27017, which is the default for Mongo.
+    Now, you can install Mongo on your computer.
+    Or you may choose to use an online service, for instance, MongoDB Atlas.
+    - Alternatively, you may use an online service, e.g. MongoDB Atlas.
+2) Install packages locally to allow your JS programs to access your MongoDB instance.
+Regardless of whether your database is on your computer or in the cloud, you'll need to access it from your Express app.
+Although we can access Mongo directly from our Node Express app,
+there are some packages that simplify that a little bit.
+    - You can access MongoDB directly from your Node app using the MongoClient.
+    - Alternatively, you can install helper packages such as Mongoose to simplify some tasks:
+    
+    $ npm install mongoose --save
+
+3) Write JS to describe the Schema (blueprint for Documents) that you will use in the Collection.
+Схема это по сути филды в документе.
+4) Use the Schema to access MongoDB in your app.
+
+----------
+$ mongo
+$ use myDatabase
+$ db.people.find()  // to look in the people collection and try to find all of the entries, all of the documents.
+----------
+
+Example.
+
+HTML (that would be served from our Express app.)
+
+<html>
+<body>
+<form action='/create' method="post"> 
+    Name: <input name='name'>
+    Age: <input name='age'>
+    <input type='submit' value='Submit form'>
+</form>
+</body>
+</html>
+
+Person.js   
+    - In this file, we're going to create our schema for MongoDB.
+    - And then we'll export it so that other files can use it.
+
+
+var mongoose = require('mongoose');
+// note: your host/port number may be different;
+mongoose.connect('mongodb://localhost:27017/myDatabase'); // connected the title of db
+var Schema = mongoose.Schema;
+var personSchema = new Schema({
+    name: {type: String, required: true, unique: true},
+    age: Number
+});
+module.exports = mongoose.model({'Person', personSchema});
+
+
+index.js
+
+var express = require('express');
+var app = express();
+// We're going to use EJS as our view engine.
+app.set('view engine', 'ejs');
+// We'll use the body parser middleware to get form data.
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended: true}));
+// And we're going to include the person class by requiring Person.js.
+var Person = require('./Person.js');
+...
+// this is at the bottom
+// we'll use the express.static middleware to serve static content.
+app.use('/public', express.static('public'));
+// And here we see that if we get a URI request for just a slash, we're going to use a redirect function 
+// in the response to redirect to this page here.
+app.use('/', (req,res) => {
+    res.redirect('/public/personform.html');
+});
+// And, of course, we start our Express app listening on port 3000 for incoming HTTP requests.
+app.listen(3000, (){
+    console.log('Listening on port 3000');
+});
+
+---------
+app.use('/create', (req,res) => {
+    var newPerson = new Person ({   // defined in Person.js
+        name: req.body.name,
+        age: req.body.age,
+    });
+    // we can create new documents using the save f-n
+    newPerson.save( (err) => {
+        if (err) {
+            res.type('html').status(500);
+            res.send('Error: ' + err);
+        }
+        else {
+            res.render('created', {person: newPerson});
+        }
+    });
+});
+
+
+app.use('all', (req,res) => {
+    Person.find((err, allPeople) => {
+        if (err) {
+            res.type('html').status(500);
+            res.send('Error: ' + err);
+        }
+        else if (allPeople.length == 0) {
+            res.type('html').status(200);
+            res.send('There are no people');
+        }
+        else {
+            res.render('showAll', {people: allPeople});
+        }
+    });
+});
+
+app.use('/person', (req, res) => {
+    var searchName = req.query.name;
+    Person.findOne({name: searchName}, (err, person) => {
+        if (err) {
+            res.type('html').status(500);
+            res.send('Error: ' + err);
+        }
+        else if (!person) {
+            res.type('html').status(200);
+            res.send('No person named ' + searchName);
+        }
+        else {
+            res.render('personInfo', {person: person});
+        }
+    });
+});
+
+app.use('/update', (req, res) => {
+    var updateName = req.body.username;
+    Person.findOne({ name: updateName }, (err, person) => {
+        if (err) {
+            res.type('html').status(500);
+            res.send('Error: ' + err);
+        }
+        else if (!person) {
+            res.type('html').status(200);
+            res.send('No person named ' + updateName);
+        }
+        else {
+            person.age = req.body.age;
+            person.save( (err) => {
+                if (err) {
+                    res.type('html').status(500);
+                    res.send('Error: ' + err); 
+                } else {
+                    res.render('updated', {person: person});
+                }
+            });
+        }
+    });
+});
+
+
+views/showAll.ejs
+
+Here are all the people:
+<ul>
+<% people.forEach( (person) => { %>
+    <li><a href="/person?name=<%= person.name %>"><%= person.name %></a>:<%= person.age %>
+    </li>
+<% }); %>
+</ul>
+<br><a href="/public/personform.html">Create New Person</a></br>
+
+
+views/personInfo.ejs
+
+<form action="/update" methood="post">
+Name: <%= person.name %><br>
+<input name='username' value='<%= person.name %>' hidden>
+Age: <input name='age' value='<%= person.age %>'>'
+<input type="submit" value="Update">
+</form>
+<br><a href="/public/personform.html">Create New Person</a>
+<br><a href="/all">Show All</a>
+
+
+views/updated.ejs
+
+Updated <%= person.name %>'s age to <%= person.age %>
+<br><a href="/public/personform.html">Create New Person</a>
+<br><a href="/all">Show All</a>
+
+
+------------------------ Querying data in MongoDB ------------------------
+We can use the 'find' f-n to select all documents in a collection, or pass a query object to select only certain ones.
+Once we have a document, we can update it using the 'save' f-n.
+
+------------------------ Advanced MongoDB queries ------------------------ 
+Example.
+
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/myDatabase'); 
+var Schema = mongoose.Schema;
+var authorSchema = new Schema({
+    name: String,
+    affiliation: String
+});
+var bookSchema = new Schema({
+    title: {type: String, required: true, unique: true },
+    year: Number,
+    authors: [authorSchema]
+});
+module.exports = mongoose.model({'Book', bookSchema});
+
+
+
+{
+    title: 'Introduction to Algorithms',
+    year: 1990,
+    authors: [
+        {name: 'Thomas Cormen', affiliation: 'Dartmouth'},
+        {name: 'Charles Leiserson', affiliation: 'MIT'}
+    ]
+}
+{
+    title: 'Principles of Compliler Design',
+    year: 1977,
+    authors: [
+        {name: 'Thomas Cormen', affiliation: 'Dartmouth'},
+        {name: 'Charles Leiserson', affiliation: 'MIT'}
+    ]
+}
+
+
+
+Another example.
+// We can do all and any queries by passing different types of query objects to the find function.
+app.use('/search', (req,res) => {
+    if (req.body.which == 'all') {
+        searchAll(req,res);
+    }
+    else if (req.body.which == 'any') {
+        searchAll(req,res);
+    }
+    else {
+        searchAll(req,res);
+    }
+});
+
+function searchAll(req, res) {
+    // create an empty object called query.This object is going to be used to conduct the query in our db.
+    // Of course, we don't know the properties yet, because we don't know what the user is searching for.
+    var query = {}; 
+    if (req.body.title) query.title = req.body.title;
+    if (req.body.year) query.year = req.body.year;
+    if (req.body.name) {
+        query.['author.name'] = req.body.name;
+    }
+    console.log(query);
+    // {'authors.name': 'Chris Murphy', year: '2017'}
+    Book.find(query, (err, books) => {
+        if (err) {
+            res.type('html').status(500);
+            res.send('Error: ' + err);
+        }
+        else {
+            res.render('books', {books: books});
+        }
+    });
+}
+
+function searchAny(req, res) {
+    var terms = []; 
+    // Remember, in JavaScript, we can think of an array as a stack, an array as a push function that will add 
+    // something to the end of the array, or push it until the end or the top of that stack.
+    // So how can I tell Mongo that I want to do a search for a title that includes the word programming? 
+    // The solution is to use a regular expression.
+    // Regular expressions are just patterns of characters and we can determine whether a string matches that pattern.
+    // if (req.body.title) terms.push({ title: req.body.title });
+    if (req.body.title) terms.push({ title: { $regex: req.body.title} });
+    if (req.body.year) terms.push({year: req.body.year});
+    if (req.body.name) terms.push({'authors.name': req.body.name});
+    
+    var query = { $or : terms };
+    console.log(query);
+    // { '$or': [{title: 'Progarmming'}, {year: '2017'}]}
+    // { '$or': [{title: [Object]}, {year: '2017'}]}
+
+    Book.find(query, (err, books) => {
+        if (err) {
+            res.type('html').status(500);
+            res.send('Error: ' + err);
+        }
+        else {
+            res.render('books', {books: books});
+        }
+    // And now, if I want to sort the results I'll just add this sort function after the find function.
+    }).sort({'title': 'asc'});
+}
+
+views/books.ejs
+
+Here are the results of your search:
+<ul>
+<% books.forEach( (book) => { %>
+    <li>
+        <i><% book.title %></i>
+        <% book.authors.forEach ( (author) => { %>
+            <% author.name %>
+        <% }); %>
+        <% book.year %>
+    </li>
+<% }); %>
+</ul>
+
+
+------------------------ Developing an API with Node and MongoDB ------------------------
+You can create your own API using Node to return JSON data instead of HTML in reply to HTTP requests.
+Now let's see how our Node express app would implement the middle wear for handling the /api request.
+That is when the browser is asking not for an entire HTML page, but just for the updated JSON object 
+with the result of our query.
+
+app.use('/api', (req,res) => {
+    var query = {};
+    if (req.query.title)
+        query.title = { $regex : req.query.title };
+    if (req.query.name)
+        query['authors.name'] = { $regex: req.query.name };
+    if (req.query.year)
+        query.year = req.query.year;
+    if (Object.keys(query).length != 0) {
+        Book.find(query, (err, books) => {
+            // That is, in response to this HTTP request, I'm not sending back HTML, but I'm rather
+            // sending back JSON, which is the string representation of a JavaScript object.
+            if (!err)
+                res.json(books);
+            else {
+                console.log(err);
+                res.json({});
+            }
+        });
+    }
+    else res.json({});  // empty query
+})
+
+
+Things that are used by Mongo internally, such as a unique ID, and a version.
+$.getJSON()
+
+
+================================================================================================
+================================================================================================
+================================================================================================
+
+Homework 6.
+1. Install Node.js locally by downloading it from https://nodejs.org/en/download/>
+2. From the Terminal, Command Prompt, etc. update Node Package Manager by typing the command: npm install npm –g
+3. Create a new folder or directory for your project, then navigate to it using Terminal, Command Prompt, etc.
+4. Initialize the project by typing the command: npm init
+5. Install Express by typing the command: npm install express --save
+6. Install Mongoose by typing the command: npm install mongoose --save
+7. If you would like to install MongoDB locally, download the "Community Server" version from 
+https://www.mongodb.com/download-center#community >and follow the instructions for installing it and running it; 
+alternatively, you can create an account to use a cloud service such as MongoDB Atlas 
+(https://www.mongodb.com/cloud/atlas>); either way, be sure to note the hostname and port number of where your 
+database instance is running.
+
+MongoDB Collections https://www.tutorialspoint.com/mongodb/mongodb_create_collection.htm

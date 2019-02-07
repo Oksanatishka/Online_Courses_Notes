@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="react.js"></script>
+        <script src="react-dom.js"></script>
+    </head>
+
+    <body>
+        <div id="container"></div>
+        <script type="text/jsx">
+            <!-- 1) Let's create a new React component named ArticlesGrid to store the data in the page -->
+            class ArticlesGrid extends React.Component {
+                constructor(props){
+                    super(props);
+                    this.state = {
+                        articles: []
+                    };
+                }
+                <!-- 2) Let's start by getting some data from the API with a search term.
+                We'll do this with jQuery AJAX. -->
+                componentDidMount () {  // callback f-n called immediately after the component is mounted
+                                        // in the virtual dom.
+                    var url =
+                        'https://api.nytimes.com/svc/search/v2/articlesearch.json?'
+                        + 'api-key=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                    $.getJSON(url, function(data, status) {
+                        return this.setState({articles: this.parse(data)});
+                    }.bind(this));
+                }
+
+                parse(results) {
+                    if(!results || !results.response) return [];    // error handling
+                    var articles = results.response.docs;
+                    var parsedArticles = [];
+                    for (var i=0; i < articles.length; i++) {
+                        var article = articles[i];
+                        if (article.multimedia.find(this.isXL)) {
+                            parsedArticles.push({
+                                id:         article._id,
+                                title:      article.headline.main || 'Untitled',
+                                imageURL:   article.multimedia.find(this.isXL).url || '#',
+                                webURL:     article.web_url || '#'
+                            });
+                        }
+                    }
+                    return parsedArticles;
+                }
+                isXL(image){
+                    return image.subtype === 'xlarge';
+                }
+
+
+                <!-- 4) Finally, we can render the Article Grid to tie it all together. -->
+                render(){
+                    return this.state.articles && (
+                        <div className='articles'>
+                            {this.state.articles.map( function (article) {
+                                return <Article article={article} key={article._id} />
+                            })}
+                        </div>
+                    );
+                }
+            }
+
+            <!-- 3) Now that we have the data, let's make a component to display each article.
+            This is shorthand for a component that only has a 'render' f-n. -->
+            var Article = function({article}) {
+                var imgURL = 'https://static01.nyt.com/' + article.imageURL;
+                return (
+                    <div className='article'>
+                        <a className='article-link' href={article.webURL}>
+                            <img className='article-image' title={article.title} src={imgURL} />
+                        </a>
+                    </div>
+                );
+            }
+        </script>
+    </body>
+</html>

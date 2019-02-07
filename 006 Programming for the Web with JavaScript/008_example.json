@@ -1,0 +1,7 @@
+{
+    "name": "Oksana Bibik",
+    "age": 25,
+    "isFemale": true,
+    "personality": ["patient", "loyal", "happy"],
+    "company": { "name": "edx", "id": 1234 }
+}
