@@ -1,1 +1,21 @@
+(Java Development Kit) JDK 11 (the latest version, use Oracle version of java) contains
+1 java compiler
+2 IDE (we will be using IntelliJ IDE from a company called JetBrains) - has free version. 
+  There are other software like NetBeans, Eclipse or any other IDE's that support Java
+3 JVM (Java VM) with JAva Runtime Edition (JRE)
+
+Java 9 and Java 10 are no longer supported by Oracle.
+Java 12, Java 13 will expire in 6 months.
+But Java 11 - has LTS (long term support).
+
+Installing JDK 11 on a Mac
+http://java.sun.com --> Java SE (standard edition) --> 
+
+Installing and Configuring IntelliJ IDEA on a Mac
+https://www.jetbrains.com/  (this company created IntelliJ IDE to write java programs) --> Tools --> IntelliJ IDEA --> 
+--> Download (Community For JVM and Android development) --> Open IntelliJ IDEA CE (Community Edition) app --> 
+--> Configure --> Project Defaults --> Project Structure.
+--> Configure --> Preferences ..
+
+-----------------------------------------------------------------------------------------------------------------------
 
