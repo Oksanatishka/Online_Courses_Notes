@@ -44,10 +44,47 @@ IntelliJ automatically saves code for you (or File -> Save All). Eclipse - doesn
 ----------------------------------- 3. Variables, Datatypes and Operators ------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------
 если писать sout выведет System.out.println();
+https://unicode-table.com/en/#control-character
+
+8 'Primitive' Data types (created by a language):
+- Whole numbers: int, byte, short, double
+- Decimal numbers: float, double
+- Char, Boolean
+
+There's a way to create your own data types also known as 'objects'.
+
+String is not a primitive data type. It's class.
+-=-=-=-=-=-=-==-=-=-==-=-=--=-=-=-=-=-=-==-=-=-==-=-=-
+Float is an object; float is a primitive. Same relationship as Integer and int, Double and double, Long and long.
+float can be converted to Float by autoboxing, e.g.
+      float f=1.0f;
+      Float floatObject = f;
+or explicitly
+      Float floatObject = new Float(f);
+Initially primitives were retained alongside the object versions for speed. Autoboxing/unboxing was added with java 5 to facilitate conversion.
+-=-=-=-=-=-=-==-=-=-==-=-=--=-=-=-=-=-=-==-=-=-==-=-=-
+
+Operators:
+= (assign operator) + - / * % 
+++  --  
++=  -=  *=  /=
+operators below are used in conditions:
+== (equal to)  != (not equal to) > >=  < <= && (AND)  || (OR)   
+ternary operator ?:
+
+Check:  JAVA Tutorial https://docs.oracle.com/javase/tutorial/java/nutsandbolts/opsummary.html
+Check:  Java Operator Precedence Table
 
 --------------------------------------------------------------------------------------------------------------
 ----------------------------------- 4. Java Tutorial: Expressions, Statements, Code Blocks, Methods and more -------------------------
 --------------------------------------------------------------------------------------------------------------
+Java has 53 reserved words - keywords. IntelliJ will highlight keywords in blue. 
+Check:  List of Java keywords.
+
+The expression component is variable, values and operators. Data type is not part of expression.
+double kilometers = (100 * 1.609344);   // expression is kilometers = (100 * 1.609344)
+                                        // statement is double kilometers = (100 * 1.609344);
+By adding data type(and semicolon) we form a valid data statement.
 
 --------------------------------------------------------------------------------------------------------------
 ----------------------------------- 5. Control Satements Flow ------------------------------------------------------------
