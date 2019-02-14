@@ -43,7 +43,10 @@ IntelliJ automatically saves code for you (or File -> Save All). Eclipse - doesn
 --------------------------------------------------------------------------------------------------------------
 ----------------------------------- 3. Variables, Datatypes and Operators ------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------
-если писать sout выведет System.out.println();
+sout   - выведет System.out.println();
+psvm   - выведет public static void main(String[] args) {}
+
+
 https://unicode-table.com/en/#control-character
 
 8 'Primitive' Data types (created by a language):
@@ -86,8 +89,34 @@ double kilometers = (100 * 1.609344);   // expression is kilometers = (100 * 1.6
                                         // statement is double kilometers = (100 * 1.609344);
 By adding data type(and semicolon) we form a valid data statement.
 
+Install DiffMerge
+http://sourcegear.com/diffmerge/
+Downloads --> DiffMerge --> OS X 10.6 DMG(Intel)
+
+Method Overloading is a feature that allows us to have more than one method with the same name, so long as we use different parameters.
+As an example, let's say you have to create a method which can do:
+  - the sum of two numbers;
+  - the sum of three numbers;
+  - the sum of four numbers.
+  
+Bad practice:
+public static int sumTwoNumbers (int a, int b) { return a + b; }
+public static int sumThreeNumbers (int a, int b, inc c) { return a + b + c; }
+public static int sumFourNumbers (int a, int b, int c, int d) { return a + b + c + d; }
+
+With method overloading we end up with 3 methods but all sharing the same method name.
+
+Good practice:
+public static int sum (int a, int b) { return a + b; }
+public static int sum (int a, int b, inc c) { return a + b + c; }
+public static int sum (int a, int b, int c, int d) { return a + b + c + d; }
+
+CONSTANT 
+public static final String INVALID_VALUE_MESSAGE = "Invalid value";
+
+
 --------------------------------------------------------------------------------------------------------------
------------------------------------ 5. Control Satements Flow ------------------------------------------------------------
+----------------------------------- 5. Control Statements Flow ------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------------------------------------
