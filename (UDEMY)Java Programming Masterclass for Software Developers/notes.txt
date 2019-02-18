@@ -123,10 +123,26 @@ public static final String INVALID_VALUE_MESSAGE = "Invalid value";
 3. while
 4. do while
 
+
+Integer.parseInt();
+Double.parseDouble();
+
+Method nextline
+Class Scanner (for primitive types and strings)
+import java.util.Scanner;   - will be added automatically.
+System.in - to type input into console.
+new keyword - is instance/object of e.g. Scanner
+
+while (true) {  // endless loop
+  // code
+  if (counter == 10)
+      break;        // e.i. after 10 iterations break loop;
+}
 --------------------------------------------------------------------------------------------------------------
 ----------------------------------- 6. OOP Part 1: Classes, Constructors and Inheritance ---------------------------------------------
 --------------------------------------------------------------------------------------------------------------
-
+OOP 1: Classes, Objects, Constructors, Inharitance
+4 components of OOP: 
 --------------------------------------------------------------------------------------------------------------
 ----------------------------------- 7. OOP Part 2: Composition, Encapsulation and Polymorphism ---------------------------------------
 --------------------------------------------------------------------------------------------------------------
