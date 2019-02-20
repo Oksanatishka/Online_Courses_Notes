@@ -163,16 +163,62 @@ Inheritance
 - we can overwrite Animal methods
   Code --> Generate --> Overwrite methods.
   
-
+---------------------------------------------------------
 Reference vs Object vs Instance vs Class
   Class - as a template for a building a house
   Object / Instance - as each house
   Reference - as an address of a house
-  
+  e.g.
+      House bluehouse = new House();    // reference     
+      House anotherhouse = bluehouse;   // refence to the same object in memory - once you change one - the other one will be changed too
+---------------------------------------------------------  
 this vs super
+1) The keyword 'super' is used to access/call the parent class members (variables and methods).
+   --- used with method overriding.
+(In other words it's calling the method with the same name from the parent class. Without the keyword 'super' it would be recursive call.
+Meaning that the method would call it self forever or until memory is fully used).
+2) The keyword 'this'  is used to call        the current class members.         
+   --- used with constructors and setters.
+NOTE: we can use both of them anywhere in a class except static areas (the static block or a static method). 
+        Any attempt to do so will lead to compile-time errors.
 
+this() vs super() call
+
+---------------------------------------------------------
 Method Overloading vs Overriding Recap
-
+1) Overloading doesn't have anything to do with polymorphism but Java developers often refer to overloading as Compile Time Polymorphism.
+We can overload static and instance methods.
+    
+    class Dog {
+        public void bark(){                     // same name, same parameters
+          System.out.println("woof");
+        }
+    }
+    
+    class GermanShepherd extends Dog {
+        @Override
+        public void bark(){                     // same name, same parameters
+          System.out.println("woof woof woof");
+        }
+    }
+    
+2) Method overriding means defining a method in a child class that already exists in the parent class with same signature (same name, same arguments).
+Method overriding is also know as Runtime Polymorphism and Dynamic Method Dispatch, because the method that is going to be called is decided at runtime by the JVM.
+When we override a method it's recommended to put @Override immediately above the method definition.
+We can't override static methods, only instance methods.
+      
+      class Dog {
+        public void bark(){                     // same name, same parameters
+          System.out.println("woof");
+        }
+        
+        public void bark(int number){           // same name, different parameters
+          for(int i=0;i<number;i++)
+              System.out.println("woof");
+        }
+    }
+   
+---------------------------------------------------------
 Static vs Instance Methods
 
 Static vs Instance Variables
