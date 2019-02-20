@@ -142,7 +142,42 @@ while (true) {  // endless loop
 ----------------------------------- 6. OOP Part 1: Classes, Constructors and Inheritance ---------------------------------------------
 --------------------------------------------------------------------------------------------------------------
 OOP 1: Classes, Objects, Constructors, Inharitance
-4 components of OOP: 
+4 components of OOP: Inharitance | encapsulation |
+
+Objects have 2 characteristics: state & behaviour. 
+Class is as template for creating objects.
+Class: 
+  -- fields (member variables) --> private (encapsulation - to hide fields and methods from access publicly)
+  -- methods
+
+In IntelliJ, 
+Code --> Generate --> Getter and Setter (will do it automatically).
+Code --> Generate --> Constructor
+
+The purpose of constructor is to initialize the object you're creating and do whatever else you wanna do at the time the object is being created. It's called once at the start.
+Constructor can be overloaded (we can have more than one constructor).
+
+Inheritance
+- add 'extends' keyword, e.i. public class Dog extends Animal (inhariting from Animal class).
+- call that other constructor class to initialize it
+- we can overwrite Animal methods
+  Code --> Generate --> Overwrite methods.
+  
+
+Reference vs Object vs Instance vs Class
+  Class - as a template for a building a house
+  Object / Instance - as each house
+  Reference - as an address of a house
+  
+this vs super
+
+Method Overloading vs Overriding Recap
+
+Static vs Instance Methods
+
+Static vs Instance Variables
+
+
 --------------------------------------------------------------------------------------------------------------
 ----------------------------------- 7. OOP Part 2: Composition, Encapsulation and Polymorphism ---------------------------------------
 --------------------------------------------------------------------------------------------------------------
