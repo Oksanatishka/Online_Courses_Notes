@@ -188,6 +188,7 @@ this() vs super() call
 Method Overloading vs Overriding Recap
 1) Overloading doesn't have anything to do with polymorphism but Java developers often refer to overloading as Compile Time Polymorphism.
 We can overload static and instance methods.
+May have different Access Modifiers(private, public, protected).
     
     class Dog {
         public void bark(){                     // same name, same parameters
@@ -220,6 +221,13 @@ We can't override static methods, only instance methods.
    
 ---------------------------------------------------------
 Static vs Instance Methods
+static methods are called as ClassName.methodName(); or methodName(); only if in the same class.
+main is a static method.
+Static or Instance Method?
+Should a method be static?  --> Does it use any fields(instance variables) or instance methods? -->
+--> Yes --> It should probably be an instance method
+--> No  --> It should probably be a static method
+---------------------------------------------------------
 
 Static vs Instance Variables
 
