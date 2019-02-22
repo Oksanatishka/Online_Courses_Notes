@@ -142,7 +142,7 @@ while (true) {  // endless loop
 ----------------------------------- 6. OOP Part 1: Classes, Constructors and Inheritance ---------------------------------------------
 --------------------------------------------------------------------------------------------------------------
 OOP 1: Classes, Objects, Constructors, Inharitance
-4 components of OOP: Inharitance | encapsulation |
+4 components of OOP: Inharitance | composition | encapsulation | polymorphysm
 
 Objects have 2 characteristics: state & behaviour. 
 Class is as template for creating objects.
@@ -235,6 +235,25 @@ Static vs Instance Variables
 --------------------------------------------------------------------------------------------------------------
 ----------------------------------- 7. OOP Part 2: Composition, Encapsulation and Polymorphism ---------------------------------------
 --------------------------------------------------------------------------------------------------------------
+Inheritance relationship:   is    e.g. Car is a Vehicle.
+Composition relationship:   has   e.g. Computer has monitor/motherboard/etc. (but monitor is not a computer, it's part) 
+
+Composition:
+- создается основной класс напр. Room
+      public class Room {
+        private Bed bed;
+        private Table table;
+        private Chair chair;
+        ...
+      }
+- создаются остальные классы для обьектов основного класса напр Bed, Wall, Table etc
+- в main классе напр
+      Table theTable = new Table("white", "wood");
+      Chair theChair = new Chair("red", 4);
+      Bed theBed = new Bed(2,"brown");
+
+      Room room = new Room(theBed, theTable, theChair);
+      room.getTable().hide();
 
 --------------------------------------------------------------------------------------------------------------
 ----------------------------------- 8. Arrays, Java inbuilt Lists, Autoboxing and Unboxing -------------------------------------------
