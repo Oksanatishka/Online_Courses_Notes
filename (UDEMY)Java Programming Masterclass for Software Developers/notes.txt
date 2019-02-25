@@ -238,7 +238,7 @@ Static vs Instance Variables
 Inheritance relationship:   is    e.g. Car is a Vehicle.
 Composition relationship:   has   e.g. Computer has monitor/motherboard/etc. (but monitor is not a computer, it's part) 
 
-Composition:
+---------  Composition: --------- 
 - создается основной класс напр. Room
       public class Room {
         private Bed bed;
@@ -255,9 +255,49 @@ Composition:
       Room room = new Room(theBed, theTable, theChair);
       room.getTable().hide();
 
+--------- Encapsulation (to restrict access to certain components in the objects) --------- 
+- вместо того чтобы создавать классы с филдами public и потом инициализировать их вручную в main классе
+- нужно использовать private для филдов и конструкторы
+  Если нужно поменять имя филда во всех местах где он встречается --> правой кнопкой мишы на нем --> Refactor --> Rename
+
+
+--------- Polymorphism --------- 
+it's a method/mechanism that allows actions to act differently based on the actual object that the action is being performed on.
+- create classes within main public class (Main.java) -(this is another way of creating classes that aren't going to be reused - small and compact.)
+
+We can perform polymorphism in java by method overloading and method overriding.
+
 --------------------------------------------------------------------------------------------------------------
 ----------------------------------- 8. Arrays, Java inbuilt Lists, Autoboxing and Unboxing -------------------------------------------
 --------------------------------------------------------------------------------------------------------------
+Array is a data structure that allows you to store sequence of values that are all of the same type.
+- array of integers
+- array of Strings
+- etc
+
+If we try to access index that is out of range Java will give us an ArrayIndexOutOfBoundsException, which indicates
+that the index is out of range in other words, out of bounds. 
+
+- boolean array elements will be initialized to false
+- number array elements - to zero
+- string or other objects - to null
+
+--------- References Types vs Value Types---------
+
+Arrays.toString() method
+Returns a string representation of the contents of the specified array. The string representation consists of a list of the array’s elements, enclosed in square brackets (“[]”). Adjacent elements are separated by the characters “, ” (a comma followed by a space). 
+
+boolean[] boolArr = new boolean[] { true, true, false, true };      
+System.out.println(Arrays.toString(boolArr));                       // [true, true, false, true]
+byte[] byteArr = new byte[] { 10, 20, 30 };                         // [10, 20, 30]
+char[] charArr = new char[] { 'g', 'e', 'e', 'k', 's' };            // [g, e, e, k, s]
+double[] dblArr = new double[] { 1, 2, 3, 4 };                      // [1.0, 2.0, 3.0, 4.0]
+float[] floatArr = new float[] { 1, 2, 3, 4 };                      // [1.0, 2.0, 3.0, 4.0]
+int[] intArr = new int[] { 1, 2, 3, 4 };                            // [1, 2, 3, 4]
+long[] lomgArr = new long[] { 1, 2, 3, 4 };                         // [1, 2, 3, 4]
+Object[] objArr = new Object[] { 1, 2, 3, 4 };                      // [1, 2, 3, 4]
+short[] shortArr = new short[] { 1, 2, 3, 4 };                      // [1, 2, 3, 4]
+
 
 --------------------------------------------------------------------------------------------------------------
 ----------------------------------- 9. Inner and Abstact Classes & Interfaces --------------------------------------------------------
