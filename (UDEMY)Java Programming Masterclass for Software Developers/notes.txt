@@ -299,6 +299,12 @@ Object[] objArr = new Object[] { 1, 2, 3, 4 };                      // [1, 2, 3,
 short[] shortArr = new short[] { 1, 2, 3, 4 };                      // [1, 2, 3, 4]
 
 
+--------- List and ArrayList ---------
+Resizing array
+List interface
+ArrayList is a resizable array. It handles the resizing automatically.
+ArrayLists can hold objects.
+
 --------------------------------------------------------------------------------------------------------------
 ----------------------------------- 9. Inner and Abstact Classes & Interfaces --------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------
