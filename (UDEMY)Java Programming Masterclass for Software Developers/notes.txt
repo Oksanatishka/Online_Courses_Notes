@@ -305,6 +305,46 @@ List interface
 ArrayList is a resizable array. It handles the resizing automatically.
 ArrayLists can hold objects.
 
+--------- Autoboxing & Unboxing ---------
+Autoboxing: 
+it's converting a primitive value into an object of the corresponding wrapper class. 
+For example, converting int to Integer class. The Java compiler applies autoboxing when a primitive value is:
+- Passed as a parameter to a method that expects an object of the corresponding wrapper class.
+- Assigned to a variable of the corresponding wrapper class.
+
+Unboxing: 
+it's converting an object of a wrapper type to its corresponding primitive value.
+For example conversion of Integer to int. The Java compiler applies unboxing when an object of a wrapper class is:
+- Passed as a parameter to a method that expects a value of the corresponding primitive type.
+- Assigned to a variable of the corresponding primitive type.
+
+Primitive type      Wrapper Class
+boolean             Boolean 
+byte                Byte
+char                Character (!)
+float               Float 
+int                 Integer   (!)
+long                Long
+short               Short
+double              Double
+
+Integer i = new Integer(10);    // creating an Integer Object with value 10. 
+int i1 = i;                     // unboxing the Object 
+Character gfg = 'a';            //Autoboxing of char 
+
+Integer myIntValue = 54;     // Integer myIntValue = Integer.valueOf(54);   - it's the same 
+int myInt = myIntValue();    // int myInt = myIntValue.intValue();          - it's the same
+
+// used when we store primitive types in arrays or pass them as parameters using objects
+
+--------- Linked Lists ---------
+int     4 bytes of memory
+double  8 bytes
+
+Java Garbage Collection
+
+Linked List are linear data structures where the elements are not stored in contiguous locations and every element is a separate object with a data part and address part. The elements are linked using pointers and addresses. Each element is known as a node. Due to the dynamicity and ease of insertions and deletions, they are preferred over the arrays. It also has few disadvantages like the nodes cannot be accessed directly instead we need to start from the head and follow through the link to reach to a node we wish to access.
+
 --------------------------------------------------------------------------------------------------------------
 ----------------------------------- 9. Inner and Abstact Classes & Interfaces --------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------
