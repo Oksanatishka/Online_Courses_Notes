@@ -385,6 +385,14 @@ class DemoClass implements FirstInterface, SecondInterface {
 }
 
 List --> LinkedList, ArrayList, Vector
+
+
+Inner Classes
+4 types of nested classes:
+- static
+- non-static
+- local
+- anonymous
 --------------------------------------------------------------------------------------------------------------
 ----------------------------------- 10. Java Generics ------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------
