@@ -412,6 +412,7 @@ Inner Classes
 --------------------------------------------------------------------------------------------------------------
 ----------------------------------- 14. Basic Input & Output including java.util ------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------
+NIO
 
 --------------------------------------------------------------------------------------------------------------
 ----------------------------------- 15. Concurrency in Java ------------------------------------------------------------
@@ -428,15 +429,18 @@ Inner Classes
 --------------------------------------------------------------------------------------------------------------
 ----------------------------------- 18. Debugging and Unit Testing ------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------
+JUnit
 
 --------------------------------------------------------------------------------------------------------------
 ----------------------------------- 19. Databases ------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------
-
+SQLite
+JDBC
 --------------------------------------------------------------------------------------------------------------
 ----------------------------------- 20. Java Networking Programming ------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------
-
+Client and Server Apps
+HTTPUrlConnection
 --------------------------------------------------------------------------------------------------------------
 ----------------------------------- 21. Java 9 Module System ------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------
@@ -452,5 +456,71 @@ Inner Classes
 --------------------------------------------------------------------------------------------------------------
 ----------------------------------- 24. Bonus Materials ------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------------------------------
+----------------------------------- Other Notes ------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
+When an error occurs, Java will normally stop and generate an error message. The technical term for this is: Java will throw an exception (throw an error).
+
+----------- Java try and catch
+The try statement allows you to define a block of code to be tested for errors while it is being executed.
+The catch statement allows you to define a block of code to be executed, if an error occurs in the try block.
+The try and catch keywords come in pairs:
+
+try {
+  //  Block of code to try
+}
+catch(Exception e) {
+  //  Block of code to handle errors
+}
+
+The finally statement lets you execute code, after try...catch, regardless of the result.
+The throw statement allows you to create a custom error.
+The throw statement is used together with an exception type. There are many exception types available in Java: ArithmeticException, ClassNotFoundException, ArrayIndexOutOfBoundsException, SecurityException, etc.
+
+
+----------- Non-Access Modifiers
+Access Modifiers - controls the access level
+    For classes: public or default
+    For attributes, methods and constructors: public, private, protected, default
+Non-Access Modifiers - do not control access level, but provides other functionality
+    For classes: final or abstract
+    For attributes and methods: final, abstract, static, transient, synchronized, volatile
+
+
+----------- Java Packages & API
+A package in Java is used to group related classes. We use packages to avoid name conflicts, and to write a better maintainable code. Packages are divided into two categories:
+ - Built-in Packages (packages from the Java API)       https://docs.oracle.com/javase/8/docs/api/
+ - User-defined Packages (create your own packages)
+
+
+----------- Java Enums
+Enum is short for "enumerations", which means "specifically listed".
+An enum is a special "class" that represents a group of constants (unchangeable variables, like final variables).
+
+enum Level {
+  LOW,
+  MEDIUM,
+  HIGH
+}
+
+You can access enum constants with the dot syntax:
+Level myVar = Level.MEDIUM;
+
+
+-------- Java User Input (Scanner)
+Input Types
+nextBoolean()	  Reads a boolean value from the user
+nextByte()	    Reads a byte value from the user
+nextDouble()	  Reads a double value from the user
+nextFloat()	    Reads a float value from the user
+nextInt()	      Reads a int value from the user
+nextLine()	    Reads a String value from the user
+nextLong()	    Reads a long value from the user
+nextShort()	    Reads a short value from the user
+
+
+
 
 
