@@ -522,5 +522,32 @@ nextShort()	    Reads a short value from the user
 
 
 
+------- Java Collections
+A Collection is a group of individual objects represented as a single unit. Java provides Collection Framework which defines several classes and interfaces to represent a group of objects as a single unit.
 
+The Collection interface (java.util.Collection) and Map interface (java.util.Map) are the two main “root” interfaces of Java collection classes.
+
+------- Java HashMap
+You learned from the previous chapter, that Arrays store items as an ordered collection, and you have to access them with an index number (int type). 
+A HashMap however, store items in "key/value" pairs, and you can access them by an index of another type (e.g. a String).
+
+One object is used as a key (index) to another object (value). It can store different types: String keys and Integer values, or the same type, like: String keys and String values.
+
+Example: Create a HashMap object called capitalCities that will store String keys and String values:
+
+import java.util.HashMap; // import the HashMap class
+HashMap<String, String> capitalCities = new HashMap<String, String>();
+
+To Add Items:         use the put() method
+To Access an Item:    use the get() method and refer to its key
+To Remove an Item:    use the remove() method and refer to the key
+To remove all items:  use the clear() method
+HashMap Size:         size();
+
+Loop through the items of a HashMap with a for-each loop.
+Use the keySet() method if you only want the keys, and use the values() method if you only want the values.
+Keys and values in a HashMap are actually objects.
+
+------- Java Files
+The File class from the java.io package, allows us to work with files.
 
