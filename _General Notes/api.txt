@@ -1,0 +1,61 @@
+Resources: 
+https://www.youtube.com/watch?v=oBW_VNg4qD0&list=WL&index=16
+
+
+APIS
+List of APIs https://www.programmableweb.com/apis/directory
+Free Styles for Google Maps https://snazzymaps.com/
+
+Limit: 3000 requests per day
+
+2 APIs: geocoding api (server side) and (client side to display map)
+
+Example: I want the app to send text messages if a gig is cancelled.
+Step 1: Sign up to Twilio.
+Step 2: Fetch credentials.
+Step 3: Write some Ruby.
+
+    # Download the twilio-ruby library from twilio.com/docs/libraries/ruby
+    require 'twilio-ruby'
+
+    account_sid = 'ACxxxxxxxxxxxxxxxxxxxxxxxx'          # you get this info from twilio dashboard (it's like email & pw on fb)
+    auth_token = 'yyyyyyyyyyyyyyyyyyyyyyyyy'            # you get this info from twilio dashboard (it's like email & pw on fb)
+
+    client = Twilio::REST::Client.new(account_sid, auth_token)
+
+    client.messages.create(
+        from: '+15551234567',           # Your Twilio number
+        to: '+15555555555',             # Your mobile phone number
+        body: "Hey friend!"
+    )
+
+Step 4: Run your code, obviously. (Your program sent a text!)
+
+
+You can do http request in any language.
+
+
+WEBHOOKS
+
+Example: Every 10 seconds call the API to fetch list of Meetup attendees.
+Hollywood Principle: Don't call us, we'll call you.
+Meetup, please call my server as soon as a new member has RSVP'd
+// The term "RSVP" comes from the French expression répondez s'il vous plaît, meaning "please respond." 
+http://myapp.com/member_rsvpd for incoming requests
+
+Webhook vs API call
+Meetup  - through Webhook   -> My app                   - Webhook: Service A (Wufoo) pushes data as soon as available.
+Meetup <- through API call  -  My app                   - API:     Service B (Trello) exposes methods to read, create or update data.
+
+Lead management:
+- https://www.wufoo.com/ wufoo form to capture leads      - get leads from wufoo and push to trello
+- trello for my sales team
+
+1. To create a fake email address: Guerrilla Mail https://www.guerrillamail.com/
+2. Enter wufoo website with fake email, create a form and test it by adding a new entry.
+3. Go to trello with fake email -> create a new board
+4. Create fake account on Zapier https://zapier.com/ (to automate some tasks) -> Make a ZAP! -> 
+// zap - when on the one hand you have a trigger, and on the other hand - trigger.
+-> connect wufoo (it's trigger) to zapier, trello (it's action).
+
+request bin https://requestbin.fullcontact.com/ - Collect, inspect and debug HTTP requests and webhooks
